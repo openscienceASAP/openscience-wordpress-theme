@@ -4,8 +4,8 @@ Theme URI: http://openscience.alpine-geckos.at/projects/open-science-wordpress-t
 Author: Stefan Kasberger
 Author URI: http://www.twitter.com/stefankasberger
 Description: A fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
-It's based on the 2012 theme for WordPress (https://wordpress.org/extend/themes/twentytwelve)
-Version: 0.1
+The Open Science Theme is based on the Twenty Twelve Theme (https://wordpress.org/extend/themes/twentytwelve)
+Version: 0.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -1726,3 +1726,49 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
+
+/* ===================================================================== */
+/* ===================================================================== */
+/* */
+/* */
+/* CUSTOMIZED CSS */
+/* */
+/* */
+/* ===================================================================== */
+/* ===================================================================== */
+
+
+/* Revision Management Plugin */
+table.diff { 
+	width: 100%; 
+}
+
+table.diff th { 
+	text-align: left; 
+}
+
+table.diff .diff-deletedline { 
+	background-color:#fdd;
+	width: 50%; 
+}
+
+table.diff .diff-deletedline del { 
+	background-color:#f99;
+	text-decoration: none; 
+}
+
+table.diff .diff-addedline { 
+	background-color:#dfd;
+	width: 50%; 
+}
+
+table.diff .diff-addedline ins { 
+	background-color:#9f9;
+	text-decoration: none; 
+}
+
+table.diff .diff-context { 
+	display: none; 
+}
+
+

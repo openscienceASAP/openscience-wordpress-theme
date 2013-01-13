@@ -448,3 +448,626 @@ function twentytwelve_customize_preview_js() {
 	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
+
+/**
+ * Activates ACF User Field Add-On
+ *
+ * @since Open Science 0.1.1
+ */
+if(function_exists('register_field'))
+{
+register_field('Users_field', dirname(__File__) . '/plugins/acf/users_field.php');
+}
+
+/**
+ * Activates ACF Taxonomies Field Add-On
+ *
+ * @since Open Science 0.1.1
+ */
+if( function_exists( 'register_field' ) )
+{
+	register_field('Tax_field', dirname(__File__) . '/plugins/acf/acf-tax.php');
+}
+
+/**
+ * Adds the Fields Institute + Website, Mendeley, Data Repository, Sourcecode Repository and Slideshare to the Profile Page
+ *
+ * @since Open Science 0.1.1
+ */
+add_action( 'show_user_profile', 'extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+
+function extra_user_profile_fields( $user ) { ?>
+	<h3>Scientific Informations</h3>
+	<table class="form-table">
+		<tr>
+			<th><label for="profile">Open Science Profile</label></th>
+			<span class="description"><?php echo "URL of your Open Science Profile page." ?></span>
+			<td>
+				<input type="text" name="profile" id="profile" value="<?php echo esc_attr( get_the_author_meta( 'profile', $user->ID ) ); ?>" class="regular-text" /><br />
+			</td>
+		</tr>
+		<tr>
+			<th><label for="institute">Institute</label></th>
+			<span class="description"><?php echo "This informations plus Email, Displayname, Website and Biographic Informations will be published." ?></span>
+			<td>
+				<input type="text" name="institute" id="institute" value="<?php echo esc_attr( get_the_author_meta( 'institute', $user->ID ) ); ?>" class="regular-text" /><br />
+			</td>
+		</tr>
+		<tr>
+			<th><label for="institute-url">Institute Website</label></th>
+			<td>
+				<input type="text" name="institute-url" id="institute-url" value="<?php echo esc_attr( get_the_author_meta( 'institute-url', $user->ID ) ); ?>" class="regular-text" /><br />
+			</td>
+		</tr>
+		<tr>
+			<th><label for="mendeley">Mendeley</label></th>
+			<td>
+				<input type="text" name="mendeley" id="mendeley" value="<?php echo esc_attr( get_the_author_meta( 'mendeley', $user->ID ) ); ?>" class="regular-text" /><br />
+			<span class="description"><?php _e("URL"); ?></span>
+			</td>
+		</tr>
+		<tr>
+			<th><label for="slideshare">Slideshare</label></th>
+			<td>
+				<input type="text" name="slideshare" id="slideshare" value="<?php echo esc_attr( get_the_author_meta( 'slideshare', $user->ID ) ); ?>" class="regular-text" /><br />
+			<span class="description"><?php _e("URL"); ?></span>
+			</td>
+		</tr>
+		<tr>
+			<th><label for="data-repository">Data Repository</label></th>
+			<td>
+				<input type="text" name="data-repository" id="data-repository" value="<?php echo esc_attr( get_the_author_meta( 'data-repository', $user->ID ) ); ?>" class="regular-text" /><br />
+			<span class="description"><?php _e("URL"); ?></span>
+			</td>
+		</tr>
+		<tr>
+			<th><label for="sourcecode-repository">Sourcode Repository</label></th>
+			<td>
+				<input type="text" name="sourcecode-repository" id="sourcecode-repository" value="<?php echo esc_attr( get_the_author_meta( 'sourcecode-repository', $user->ID ) ); ?>" class="regular-text" /><br />
+			<span class="description"><?php _e("URL"); ?></span>
+			</td>
+		</tr>
+	</table>
+<?php }
+
+/**
+ * Saves new user profile fields
+ * 
+ * @since Open Science 0.1.1
+ */
+add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
+
+function save_extra_user_profile_fields( $user_id ) {
+
+	if ( !current_user_can( 'edit_user', $user_id ) ) { return false; }
+
+	update_user_meta( $user_id, 'profile', $_POST['profile'] );
+	update_user_meta( $user_id, 'institute', $_POST['institute'] );
+	update_user_meta( $user_id, 'institute-url', $_POST['institute-url'] );
+	update_user_meta( $user_id, 'mendeley', $_POST['mendeley'] );
+	update_user_meta( $user_id, 'slideshare', $_POST['slideshare'] );
+	update_user_meta( $user_id, 'data-repository', $_POST['data-repository'] );
+	update_user_meta( $user_id, 'sourcecode-repository', $_POST['sourcecode-repository'] );
+}
+
+/**
+ * Insert Creative Commons License Logos
+ * 
+ * @since Open Science 0.1.1
+ */
+function insert_license_logo_small( $license, $law, $width = -1) { 
+	if ($width == -1) $width = 88;
+
+	if($license == 'cc-zero') {
+		$license_url = "https://creativecommons.org/about/cc0";
+	}
+	else {
+		$license_url = "https://creativecommons.org/licenses/" . $license . "/3.0/" . $law;
+	}
+	$image_url = get_template_directory_uri() . "/images/logos/" . $license . ".png";
+?>
+<a rel="license" href="<?php echo $license_url ?>"><img alt="Creative Commons License" style="border-width:0" src="<?php echo $image_url ?>" width="<?php echo $width; ?>" height="31" /></a>
+<?php }
+
+/**
+ * Is the Project (Science, Project and Course) Open Knowledge, Open Science?
+ * 
+ * @since Open Science 0.1.1
+ */
+function is_project_opendefinition( $data, $content, $sourcecode ) { 
+	if( is_content_opendefinition( $content ) && is_data_opendefinition( $data ) && is_software_opensource( $sourcecode ) ) return TRUE;
+	else return FALSE;
+}
+
+/**
+ * Is the content open by the opendefinition?
+ * 
+ * @since Open Science 0.1.1
+ */
+function is_content_opendefinition( $license ) { 
+
+	// http://opendefinition.org/licenses/
+	if( $license == 'by' || $license == 'cc-zero' || $license == 'by-sa' || $license == 'fdl' || $license == 'fal' || $license == 'miros'  ) return TRUE;
+	else return FALSE;
+}
+
+/**
+ * Is the data open by the opendefinition?
+ * 
+ * @since Open Science 0.1.1
+ */
+function is_data_opendefinition( $license ) { 
+
+	// http://opendefinition.org/licenses/
+	if( $license == 'odcpddl' || $license == 'odcby' || $license == 'odbl' || $license == 'cc-zero' ) return TRUE;
+	else return FALSE;
+}
+
+/**
+ * Is the Sourcecode Open Source?
+ * 
+ * @since Open Science 0.1.1
+ */
+function is_software_opensource( $license ) { 
+	return TRUE;
+}
+
+/**
+ * Get HTML of repository
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_repository_html( $repo_url ) {
+	// parse host out of url
+	$repo = parse_url($repo_url);
+	$hoster = $repo['host'];
+
+	switch ($hoster) {
+		case "github.com":
+		case "www.github.com":
+			// parse repo and username out of url
+			$repo_path = $repo['path'];
+			$github_repo = split("/", $repo_path);
+			$username = $github_repo[1];
+			$repo_name = $github_repo[2];
+			get_github_button($username, $repo_name, "watch");
+			break;
+
+		case "bitbucket.org": 
+		case "www.bitbucket.org": 
+			$domain = "https://bitbucket.org/";
+			$hoster = "bitbucket";
+			?><a href="<?php echo $repo_url; ?>">Repository</a> hosted at <a href="<?php echo $domain; ?>">Bitbucket.org</a> <?php
+			break;
+
+		default:
+			$domain = $repo['scheme'] . "://" . $repo['host'];
+			$hoster = $repo['host'];
+			?><a href="<?php echo $repo_url; ?>">Repository</a> hosted at <a href="<?php echo $domain; ?>"><?php echo $hoster; ?></a> <?php
+			break;
+	}
+}
+
+/**
+ * Get HTML of License
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_license_html( $license ) {
+
+	// write license text with link to license
+	switch ($license) {
+		case "GPLv2": 
+			$license_url = "https://www.gnu.org/licenses/gpl-2.0.html";
+			$license = "GPL v2";
+			break;
+
+		case "GPLv3":
+			$license_url = "http://gplv3.fsf.org/";
+			$license = "GPL v3";
+			break;
+
+		case "BSD 2-clause":
+			$license_url = "http://opensource.org/licenses/BSD-2-Clause";
+			$license = "BSD 2-clause License";
+			break;
+
+		case "BSD 3-clause":
+			$license_url = "http://opensource.org/licenses/BSD-3-Clause";
+			$license = "BSD 3-clause License";
+			break;
+
+		case "MIT":
+			$license_url = "http://opensource.org/licenses/mit-license.html";
+			$license = "MIT License";
+			break;
+
+		case "MPLv2":
+			$license_url = "http://opensource.org/licenses/MPL-2.0";
+			$license = "Mozilla Public License 2.0";
+			break;
+
+		case "LGPLv2.1":
+			$license_url = "http://opensource.org/licenses/lgpl-2.1.php";
+			$license = "Lesser GPL v2.1";
+			break;
+
+		case "LGPLv3.0":
+			$license_url = "http://opensource.org/licenses/lgpl-3.0.html";
+			$license = "Lesser GPL v3.0";
+			break;
+
+		case "ApacheLv2.0":
+			$license_url = "http://opensource.org/licenses/Apache-2.0";
+			$license = "Apache License 2.0";
+			break;
+	} ?>
+	<a href="<?php echo $license_url; ?>"><?php echo $license; ?></a> <?php
+}
+
+/**
+ * Get latest post of a category
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_latestPosts($posttype, $category, $language, $count = 5) { 
+	$myQuery = new WP_Query( array( 'post_type' => $posttype, 'posts_per_page' => $count, 'category_name' => $category ) ); 
+	$num_posts = count($myQuery);
+	if( $num_posts > 0 ) { ?>
+		<div class="content">
+			<h2><?php echo get_lang($language, "recentArticles"); ?></h2>
+			<ul>
+				<?php while( $myQuery->have_posts() ) : $myQuery->the_post();
+					?><li class="latestPosts"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li><?php 
+				endwhile; 
+				wp_reset_postdata(); ?>
+				<li><a href="<?php echo home_url() . '/category/' . $category; ?>"><button class="btn btn-mini" type="button">Read more >></button></a></li>
+			</ul> 
+			<p><a href="<?php echo home_url() . '/category/' . $category_slug . '/feed'; ?>"><img alt="RSS Feed" src="<?php echo get_template_directory_uri(); ?>/images/rss-small.gif" />RSS Feed</a></p>
+		</div> <!-- end articles --> <?php
+	} 
+}
+
+/**
+ * Get GitHub Button via http://ghbtns.com/
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_github_button($username, $repo, $buttontype = "watch", $count = TRUE) {
+	if($count == TRUE) {
+		?><iframe src="http://ghbtns.com/github-btn.html?user=<?php echo $username; ?>&repo=<?php echo $repo; ?>&type=<?php echo $buttontype; ?>&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe> <?php
+	} else {
+		?><iframe src="http://ghbtns.com/github-btn.html?user=<?php echo $username; ?>&repo=<?php echo $repo; ?>&type=<?php echo $buttontype; ?>" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe> <?php
+	}
+}
+
+/**
+ * Convert the numeric date representation into html and write the result
+ * 
+ * @since Open Science 0.1.1
+ */
+function write_datestring2html($date) {
+	$date = split("-", $date);
+	echo strftime( "%e. %b %Y", mktime(12, 0, 0, $date[1], $date[2], $date[0] ) );
+}
+
+/**
+ * shows the flag of a language
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_flag($language, $size) {
+	$filename = $language;
+
+	// get size
+	switch($size) {
+		case "small":
+			$filename = $filename . "-16";
+			break;
+
+		case "medium":
+			$filename = $filename . "-24";
+			break;
+
+		case "large":
+			$filename = $filename . "-32";
+			break;
+	} ?>
+	<img src="<?php echo get_template_directory_uri(); ?>/images/<?php echo $filename; ?>.png" alt="<?php echo $language; ?> Flag" width="24" height="24" /> <?php
+}
+
+/**
+ * Returns the short form of the language
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_short_lang($language) {
+
+	// get language
+	switch($language) {
+		case "German":
+			$short = "de";
+			break;
+
+		case "English":
+			$short = "en";
+			break;
+	}
+	return $short;
+}
+
+/**
+ * Register Categories for posts
+ * 
+ * @since Open Science 0.1.1
+ */
+register_taxonomy_for_object_type( "category", "post" );
+
+/**
+ * Returns text in the proper language
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_lang($language, $ID) {
+	
+	switch($ID) {
+		case "description":
+			$text['de'] = "Beschreibung";
+			$text['en'] = "Description";
+			break;
+
+		case "openness":
+			$text['de'] = "Offenheit";
+			$text['en'] = "Openness";
+			break;
+
+		case "participation":
+			$text['de'] = "Partizipieren";
+			$text['en'] = "Participation";
+			break;
+
+		case "sources":
+			$text['de'] = "Quellen";
+			$text['en'] = "Sources";
+			break;
+
+		case "revisions":
+			$text['de'] = "Revisionen";
+			$text['en'] = "Revisions";
+			break;
+
+		case "coursedetails":
+			$text['de'] = "Kurs Details";
+			$text['en'] = "Course Details";
+			break;
+
+		case "duration":
+			$text['de'] = "Dauer";
+			$text['en'] = "Duration";
+			break;
+
+		case "workload":
+			$text['de'] = "Aufwand";
+			$text['en'] = "Workload";
+			break;
+
+		case "language":
+			$text['de'] = "Sprache";
+			$text['en'] = "Language";
+			break;
+
+		case "courseinstitution":
+			$text['de'] = "Kurs Institution";
+			$text['en'] = "Course Institution";
+			break;
+
+		case "articles":
+			$text['de'] = "Artikel";
+			$text['en'] = "Articles";
+			break;
+
+		case "teacher":
+			$text['de'] = "Lehrperson";
+			$text['en'] = "Teacher";
+			break;
+
+		case "licenses":
+			$text['de'] = "Lizenzen";
+			$text['en'] = "Licenses";
+			break;
+
+		case "contentlicensed":
+			$text['de'] = "Der Inhalt steht unter den folgenden Lizenzen solange nicht anders angegeben.";
+			$text['en'] = "The content is licensed under the following license(s), except otherwise stated.";
+			break;
+
+		case "content":
+			$text['de'] = "Inhalt";
+			$text['en'] = "Content";
+			break;
+
+		case "data":
+			$text['de'] = "Daten";
+			$text['en'] = "Data";
+			break;
+
+		case "sourcecode":
+			$text['de'] = "Quellcode";
+			$text['en'] = "Sourecode";
+			break;
+
+		case "licensedunder":
+			$text['de'] = "Lizenziert unter";
+			$text['en'] = "Licensed under";
+			break;
+
+		case "course":
+			$text['de'] = "Kurs";
+			$text['en'] = "Course";
+			break;
+
+		case "author":
+			$text['de'] = "AutorIn";
+			$text['en'] = "Author";
+			break;
+
+		case "allarticles":
+			$text['de'] = "Alle Artikel";
+			$text['en'] = "All Articles";
+			break;
+
+		case "category":
+			$text['de'] = "Kategorie";
+			$text['en'] = "Category";
+			break;
+
+		case "hperweek":
+			$text['de'] = " Std. / Woche";
+			$text['en'] = "h / week";
+			break;
+
+		case "weeks":
+			$text['de'] = "Wochen";
+			$text['en'] = "weeks";
+			break;
+
+		case "biography":
+			$text['de'] = "Biographie";
+			$text['en'] = "Biography";
+			break;
+
+		case "institute":
+			$text['de'] = "Institut";
+			$text['en'] = "Institute";
+			break;
+
+		case "page":
+			$text['de'] = "Seite";
+			$text['en'] = "Page";
+			break;
+
+		case "profile":
+			$text['de'] = "Profil";
+			$text['en'] = "Profile";
+			break;
+
+		case "comingsoon":
+		case "announcement":
+			$text['de'] = "Beginn in Kürze";
+			$text['en'] = "Coming Soon";
+			break;
+
+		case "underwrapup":
+		case "wrapping-up":
+			$text['de'] = "In Nachbereitung";
+			$text['en'] = "Under Wrap-Up";
+			break;
+
+		case "running":
+		case "participating":
+			$text['de'] = "Am Laufen";
+			$text['en'] = "Running";
+			break;
+
+		case "preparations":
+			$text['de'] = "In Vorbereitung";
+			$text['en'] = "Under Preparation";
+			break;
+
+		case "recentArticles":
+			$text['de'] = "Letzten Artikel";
+			$text['en'] = "Recent Articles";
+			break;
+
+		case "participants":
+			$text['de'] = "TeilnehmerInnen";
+			$text['en'] = "Participants";
+			break;
+
+		case "publishedat":
+			$text['de'] = "Veröffentlicht am ";
+			$text['en'] = "Published at ";
+			break;
+
+		case "relatedprojects":
+			$text['de'] = "Verbundene Projekte";
+			$text['en'] = "Related Projects";
+			break;
+	}
+	echo $text[$language];
+}
+
+/**
+ * List up all participants of a course
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_all_course_participants($language) {
+	$participants = get_field('participants');
+	?> <h2><?php echo get_lang($language, "participants"); ?></h2>
+	<ul> <?php
+
+	foreach( $participants as $user) {
+		// get name and profile url of participant
+		$profile = "http://openscience.alpine-geckos.at/profile/user/" . $user[ID];
+		$name = $user[display_name]; ?>
+			<li><?php echo $name; ?><a href="<?php echo $profile; ?>" title="profile"><i class="icon-info-sign"></i></a></li> <?php
+	}
+	?> </ul> <?php
+}
+
+/**
+ * Lists all related project
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_related_projects($language) { 
+	$projects = get_field("projects"); 
+	if($projects == TRUE) {?>
+		<div>
+			<h2><?php echo get_lang($language, "relatedprojects"); ?></h2>
+			<ul> <?php
+				foreach($projects as $project) { ?>
+					<li><a href="<?php echo get_permalink( $project->ID ); ?>" title="related project"><?php echo $project->post_title; ?></a></li> <?php
+				} ?>
+			</ul>
+		</div> <?php
+	}
+}
+
+/**
+ * Lists all related project
+ * 
+ * @since Open Science 0.1.1
+ */
+function get_all_tags( $category ) { 
+	// query all posts of category
+	//$myQuery = new WP_Query( array( 'post_type' => 'post', 'category_name' => $category ) ); 
+	$tag_array = array();
+	$myQuery = get_posts( array( 'category' => $category ) ); 
+
+	foreach($myQuery as $post) {
+		//print_r($post);
+		$tags = get_the_terms( $post->id, 'post_tag' ); 
+		//print_r($tags);
+		foreach($tags as $tag) {
+			$key = $tag->term_id;
+			$tag_array = array( $tag->name, $tag->slug );
+			$tags_array[$key] = $tag_array;
+		}
+	}
+	wp_reset_postdata(); ?>
+
+	<!-- write array into html list -->
+	<ul> <?
+	foreach($tags_array as $tag) { ?>
+		<li><a href="<?php home_url(); ?>/tag/<?php echo $tag[1]; ?>" title="tag"><?php echo $tag[0]; ?></a></li>
+	<?php } ?>
+	</lu> <?php
+}
+
+
+
+

@@ -1,0 +1,537 @@
+
+* TODO
+# research
+- LaTeX Support: http://www.mathjax.org/
+- Timelines: http://okfnlabs.org/blog/2012/12/04/javascript-timeline-libaries-a-review.html
+- Cybershare at Uni El Paso (Paper) von der iknow
+- implementation of plugins in theme => pro/cons; update outside of theme??; update frequently??
+
+# ideas
+- PlosONE: http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0050491
+- underdarkgis => https://underdark.wordpress.com
+- broader single posts?? -> http://perlsteinlab.com/blog/more-communications-fewer-tomes
+- check advanced custom fields plugin
+- open.gov.uk http://data.gov.uk/
+- http://www.spruce.it/works/ethan-perlstein-open-science
+
+*** Research Version 2
+RDFa http://aksw.org/Projects/RDFACE
+
+*** FINISH
+- contact OKFN Austria, OGD Graz, Open Data Austria, 
+- blog about it: Open Data AT?, Futurezone?
+* REQUIREMENTS VERSION 1
+** AUDIENCE
+- Scientists
+- Citizens
+- Students
+- Alumnis
+- Communities: Open Data, Open Access, Open Science, Open Source,
+all ages
+international, biggest part german
+** CONTENT
+Organize Content as fluid streams: individualy created, time sensitive
+*** TAXONOMIES
+
+# Sections
+- Courses
+- Projects
+- Science
+- Working Group
+  - Free & Open Hack Session
+  - Hackathons
+  - Open Science Stammtisch
+- Blog
+  - Comment
+  - Tutorial
+
+# Area (for Open Data)
+Collection Page of chosen Tags, like Open Government Data Graz
+- Open Data Tree
+- Open Source Software
+- Copyrights
+- Data Formats
+*** EVENTS
+**** Overview
+- Event Type
+- Location/Area
+- Date/Duration
+- organized by us or not
+- topic(s)
+**** Posts
+- normal article templates for our events
+- small preview frames for other events
+*** AUTHOR
+# Content
+- Slideshare
+- GitHub
+- Email
+- Twitter
+- LinkedIn
+- Figshare
+- Coursera
+- Institute / University
+- Website
+- Etherpad: Ideen zu wiss. Arbeiten eintragen
+*** HACKS/INCUBATOR
+a place where hackers meet and can contribute their ideas
+- links to other hacktivities: StadtLandCode,
+*** TUTORIALS
+own content type?
+** FUNCTIONS
+Search Enginge Optimized
+automatize as many steps as possible, reduce human tasks
+easy referencing
+- secure privacy concerns of automatic connection to social networks on laoding the page http://www.heise.de/extras/socialshareprivacy/
+- Feedback: bugs, critics, thanks etc.
+- LaTeX Support
+*** Event Calendar
+- RSS Feed
+- iCal
+*** RSS FEEDS
+selecting of different content types
+*** Stats
+Website, RSS Feeds, external pages
+*** EMBED MEDIA
+- tables
+- videos
+- podcasts
+- images
+- sourcecode /w syntaxhighlighting
+*** EXPORT / SAVE AS
+- Docs: ODT, PDF, TXT, EPUB, LaTeX
+- Spreadsheets: ODS, CSV
+- Images: SVG, PNG, JPEG
+- API
+*** SUBSCRIPTION
+- RSS Feed
+- iCal
+- GitHub
+- Figshare
+- Twitter Account
+- email
+*** SOCIAL MEDIA TOOLS
+# GitHub
+
+# Twitter
+- last tweets via hashtag
+- last tweets of actual page url
+*** SHORTCODES
+- [contact]: direct link to contact page
+- [about us]: direct link to about us page
+*** API
+- figshare
+- content
+- mendeley
+- twitter
+- plosone
+- altmetric.com
+** BLOG
+** COURSE
+*** Overview
+# Content
+- Description
+- wiki page
+- Openness
+- Educational Ressources
+- Sources: RSS, Coursepage, 
+- all Articles (last 5 and more...)
+- Sourcecode
+- Video
+- Info Box: Institute/University (w platform), Date (w Duration), Teacher, Copyright (w. default notion!)
+- eventual Projects
+- RSS Feed
+- Social Media Tools
+- educational ressources for the course (via link to article or own section? => tend to link)
+- header image
+- stats
+- license: data, sourcecode, publication
+
+*** Article
+- link to course
+
+** SCIENCE
+*** Overview
+# Content
+- title
+- wiki page
+- description
+- name scientists
+- contact scientists
+- organisation of scientists
+- planned time intervall
+- possibilities of participation
+- copyright (default)
+- Categories: Bachelor Thesis, ? Seminar ?, Master Thesis, PhD, Case Study
+- Keywords: used software, data and license
+- Openness keywods: data, software, methods
+- link: rawdata, sourcecode, mentions, other publications, etc.
+- collect tweets of the link
+- metrics section: download them as raw data
+  - Readers: rating
+  - citations: scopus, crossref, google scholar
+  - Social Networks: Twitter, Mendeley, Facebook, CiteUlike, 
+  - blogs & media coverage
+  ?? seperate comments, related content and metrics from content section ??
+- license: data, sourcecode, publication
+- etherpad
+- Glossar optional
+
+# functions
+- Twitter Feed zu Link und Hashtag
+- Rating
+- RSS Feed Artikel und Kommentare
+- related articles
+- list all papers
+- progress bar?? 
+- actual status: published, work in progress, abgebrochen, research -> show details to what the status means on mouse over
+- ?? comments  ??
+- show views
+- easy navigation
+- download media embeded
+- easy sharing function
+
+# Layout & Design
+- Header Image
+- clearly structure
+- ?? select color ??
+*** Paper
+own Custom Post Type
+# content
+- title 
+- versioning
+- subtitel (optional)
+- Abstract
+- Keywords
+- Openess Keywords: Software, Copyright, Data Formats, Data Source
+- Content
+- Acknowledgement
+- Conclusion
+- Name scientists
+- contact scientists
+- Organisation
+- Data Source
+- personal position to the research question and field
+- financing
+- Feedback
+- Copyright
+- Paper Type: Short-Paper, Review, Comment,
+- Open Science Rating: crowd, reviewers
+- Glossar optional
+- show/hide figures => at the top of the article, cause its one of the most important contents of a paper, next to the abstract => see plosone paper
+
+# functions
+- auotmatic Reference Box
+- RSS Feed Article and comments
+- Rating
+- comments
+- publish it also without scientific overview page or scientific project
+- show views
+- stats: shares on social web, visits on page, backlinks, comments
+
+# layout 
+big content column and sidebar on the left
+*** Review
+# functions
+- show views
+*** Comment
+
+# functions
+- show views
+*** Research Diary
+# Content
+- Name
+- versioning
+- licenses
+- Openess Keywords: Software, Copyright, Data Formats, Data Source
+
+# Funktionen
+- Rating
+- tags: literature research, data research, writing, starting, experimentation, data collection, data analyses, etc.
+
+# functions
+- show views
+** PROJECT
+mulptile users
+language
+attach projects to course or science
+- stats
+*** Overview
+- license: data, sourcecode, publication
+- wiki page
+*** Project Diary
+** DESIGN & LAYOUT
+- reduced, not overloaded
+- own graphics/icons
+- work visually
+- comprimize content
+- smaller
+- homogenious
+*** LANDING PAGE
+- reduced, clean, easy to navigate
+- user/visitor focused
+- clearly structured
+*** COLORS
+angenehme, dezente, ruhige Farben
+*** TYPO
+bigger font
+small headlines
+*** CONTENT MANAGEMENT
+display content differently: blog, science, course, project
+- Open Data, Open Knowledge & Open Content Buttons 
+
+*** LAYOUT
+better lists
+rounded style
+*** IMAGES
+*** MENU
+*** RESPONSIVE DESIGN
+- Posts, Events & Pages
+- Papers
+** NAVIGATION / MENU
+- navigate by function: page where you can find content by different navigation concepts: our structur, by topics, by use case of content, by specific content (software, data store, etc.)
+- give the user some content on every to page, he maybe is interested of to click on and go further into the page => every single post, page for clickable options => footer bar with??
+*** LANDING PAGE
+get meta pages like search and navigate by topic, tag etc from there and also the specific content
+*** MENU
+*** FOOTER
+*** SIDEBAR
+* IMPLEMENTATION VERSION 1
+** 0.1 - Course Basics
+Structur the content of the Courses Section
+*** 0.1.1 - Overview Page
+# tasks
+- DONE :)
+**** Requirements
+# description
+create a php template for the course overview page and courses
+
+# content
+- Title
+- Versionsnummer
+- Short Description < 200 Letters
+- Description
+- Openness
+- Course Teacher: Name, URL, Twitter, Email
+- Copyright: data, sourcecode, content
+- Course: Page, Platform, University, Starting date, duration, workload per week
+- sources: links, references
+- list projects, if started in the course
+- sourcecode repo: link to it => form me on github banner as link!
+- link educational ressources => own field or link to post or as subsection of content field?
+- Status options: Start, during, finish
+- Participant(s): Name, Email, Twitter, Institute
+- Twitter Hashtag
+- etherpad: link
+- Participate: Etherpad, Wiki
+- link rss feeds
+- list recent 5 articles: link to category, hide/show?
+
+# Taxonomies
+- tags: Software, Data Repository, Openness, other keywords
+- no categories!
+- seo keywords
+
+# navigation
+small navigation bar on the right sidebar
+- all sections
+- scroll down with page
+
+# functions
+- header image
+- list projects from the course
+- twitter feed zu hashtag und url
+- multi authoring/participation
+- progress bar(s)??
+- RSS Feed: articles, comments
+- add attributes to images und links
+
+# Layout
+- short description at top in the sidebar
+
+**** DOCUMENTATION
+
+# course overview page structure
+created custom fields for the backend
+
+main:
+- short Description
+- Description
+- Openness
+- Participation
+- Sources
+- Revisions
+
+sidebar:
+- course informations
+- related content
+- licenses
+- tags
+
+# courses page structure
+list up all courses differentiated by actual status
+
+# User Profile
+added scientific information fields
+- institute
+- institute website
+- mendeley
+- data repository
+- sourcecode repository
+- open science profile
+- slideshare
+
+# basic features
+- course page totally in course language (also automaticaly created text)
+- check course content for opendefinition compatibility
+
+# graphics
+- added flags: germany, uk
+- added creative commons: normal and small https://creativecommons.org/about/downloads
+- added rss small
+
+# software used
+- Twitter bootstrap v2.2.2
+- Advanced Custom Field Plugin v1.4 with Taxonomies and User Add-On
+- Socialshare plugin v1.1.6 http://www.heise.de/extras/socialshareprivacy/#merge
+- Post Revision Plugin v0.9 https://wordpress.org/extend/plugins/post-revision-display/ 
+- GitHub Button Service  http://ghbtns.com/
+*** 0.1.2 - Courses Page
+**** Requirements
+- show all courses
+*** 0.1.3 - Articles
+** 0.x - Project Basics
+** 0.x - Blog Basics
+** 0.x - Science Basics
+** 0.x - Event Basics
+** 0.x - Profile Basics
+** 0.x - Attachments Basics
+** 0.x - Navigation & Menus
+- github doesnt fit under licenses
+- related content: by author, by category, by tag
+*** 0.x.y - Landing Page
+Get the Meta Pages from there and also find the specific content
+** 0.x - Functions
+*** 0.x.y - RSS Feeds
+- embed a link element to the rss feed in the header, so search engines can find the rss link automatically
+- <a href="http://www.w3schools.com/rss/myfirstrss.xml"> and <img src="http://www.w3schools.com/rss/rss.gif" width="36" height="14"> buttons for rss feeds
+*** 0.x.y - Wordpress API
+*** 0.x.y - GitHub API
+- repo.js http://darcyclarke.me/dev/repojs/
+*** 0.x.y - Wordpress Shortcodes
+*** 0.x.y - Mendeley API
+*** 0.x.y - Twitter API
+- combine socialshare privacy plugin with twitter timeline. by default show no timeline and a link to the search page, with button klick, activate the timeline
+*** 0.x.y - Altmetrics API
+*** 0.x.y - Piwik API
+*** 0.x.y - Figshare API
+*** 0.x.y - Find link on the web
+- embed google search for link 
+*** 0.x.y - Piwik Stats
+- Stats: Site Views, Retweets, Facebook Postings => shift to functions version!
+*** 0.x.y - Subscribe
+*** 0.x.y - Export PDF
+*** 0.x.y - Export ODT
+*** 0.x.y - Export ODS
+*** 0.x.y - Export TXT
+*** 0.x.y - Export EPUB
+*** 0.x.y - Export CSV
+*** 0.x.y - Shortcodes
+** 0.x - Layout & Design
+- Calendar Logo for Subscribe Section in Sidebar
+- Creative Commons Logos in different sizes
+- get unique icon for custom post types for the backend
+** 0.x - Course Advanced
+** 0.x - Project Advanced
+** 0.x - Blog Advanced
+** 0.x - Science Advanced
+** 0.x - Events Advanced
+** 0.x - Profile Advanced
+** 0.x - Multi Language 
+** 0.x - DOCUMENTATION
+- manual authors: offer own open science profile page, 
+*** INSTALLATION
+Wordpress: Englisch
+*** PLUGINS
+Intensedebate
+MapsMarker
+Event Organiser
+All in one SEO
+TinyMCE advanced
+XML Sitemap
+Syntax Highlighter Compress
+WordPress Database Backup
+WP import
+Secure WP
+Anti Spam Bee
+piwik
+Link Checker
+WP Secure
+Add image_src Meta Tag
+Custom Post Type UI
+KCite
+Newsletter
+Replace WP-Version
+WordPress.com Stats
+WP Maintenance Mode - Wartungsmodus
+*** SETTINGS
+# Reading
+3 posts per page
+
+# Custom Post Types
+Scientific articles: ohne excerpt, Page Attributes, featured image
+mit Taxonomies: 
+
+# Custom Fields
+
+
+# Event Organiser
+current events: not past
+revisions: yes
+
+# Syntax Highlighter
+Stylesheet: Eclipse
+
+# Mediathek
+
+# NextGen Gallery
+85% quality
+1200 x 800
+thumbs: 150 x 100
+rss feed: on
+activate permalinks
+integrate slideshow: off
+columns 3  // damit die spalten sich zentrieren
+*** FOR USE
+**** Manuals BenutzerInnen
+im Wiki schreiben
+- Wordpress Einführung
+- Prozessablauf Open Science Website
+- Schreiben und Veröffentlichen im Web
+*** FOR ADMIN
+teils in Wiki, teils nicht öffentlich
+- Updates: was zu beachten ist
+- neue User / neues Projekt:
+- BackUp
+- Zugangsdaten sichern
+- Software Konfiguration sichern
+- Migration durchgehen und nötiges dokumentieren
+- Update von Wordpress Theme: Kontrollen identifizieren
+# description
+Structure the content of the Science section
+
+** OTHER
+- check code if good enough for plugin/snippet release => blog or github
+* REQUIREMENTS VERSION 2
+Get the Open Science Wordpress Theme Semantic
+update
+some new features
+*** Functions
+- multi language: german and englisch
+- semanticly
+* IMPLEMENTATION VERSION 2
+** FEATURES
+*** Semantic
+export of page in XML
+http://aksw.org/Projects/RDFACE
+

@@ -19,6 +19,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', 'page' ); ?>
+				<?php if ( function_exists('socialshareprivacy') ) { socialshareprivacy(); } ?>
 				<?php comments_template( '', true ); ?>
 			<?php endwhile; // end of the loop. ?>
 
