@@ -13,6 +13,8 @@
 - check advanced custom fields plugin
 - open.gov.uk http://data.gov.uk/
 - http://www.spruce.it/works/ethan-perlstein-open-science
+- http://www.researchtoaction.org/2013/01/open-access-whats-that-about/
+- http://schoolofdata.org/blog/
 
 *** Research Version 2
 RDFa http://aksw.org/Projects/RDFACE
@@ -85,6 +87,8 @@ easy referencing
 - secure privacy concerns of automatic connection to social networks on laoding the page http://www.heise.de/extras/socialshareprivacy/
 - Feedback: bugs, critics, thanks etc.
 - LaTeX Support
+- 1 click installation
+- customizeable content structure: everyone should be able to use just the content types needed
 *** Event Calendar
 - RSS Feed
 - iCal
@@ -259,6 +263,7 @@ attach projects to course or science
 *** Overview
 - license: data, sourcecode, publication
 - wiki page
+- Project Partner: OKFN, etc,
 *** Project Diary
 ** DESIGN & LAYOUT
 - reduced, not overloaded
@@ -302,6 +307,17 @@ Structur the content of the Courses Section
 *** 0.1.1 - Overview Page
 # tasks
 - DONE :)
+**** SUMMARY
+- created custom fields for the backend
+- structured course overview page
+- add scientific informations to user profile
+- add images: creative commons, flags and rss_small	
+- implemented twitter bootstrap v 2.2.2
+- implemented GitHub Button Service  http://ghbtns.com/
+- use of Advanced Custom Field Plugin v1.4 with Taxonomies and User Add-On
+- use of Socialshare plugin v1.1.6 http://www.heise.de/extras/socialshareprivacy/#merge
+- use of Post Revision Plugin v0.9 https://wordpress.org/extend/plugins/post-revision-display/ 
+
 **** Requirements
 # description
 create a php template for the course overview page and courses
@@ -368,9 +384,6 @@ sidebar:
 - licenses
 - tags
 
-# courses page structure
-list up all courses differentiated by actual status
-
 # User Profile
 added scientific information fields
 - institute
@@ -397,9 +410,55 @@ added scientific information fields
 - Post Revision Plugin v0.9 https://wordpress.org/extend/plugins/post-revision-display/ 
 - GitHub Button Service  http://ghbtns.com/
 *** 0.1.2 - Courses Page
+# tasks
+DONE :)
+**** SUMMARY
+- update README.md
+- update opensciencewordpresstheme.org: configuration and installation details of wordpress and plugins
+- add free university field to courses overview page template
+- validate url function
+- add courses page template
+
 **** Requirements
-- show all courses
+- Courses Page: show all courses splitted in the status types
+- update documentation with plugins and wordpress settings
+- reduce code via empty selections in custom fields
+
+**** DOCUMENTATION
+# pages 
+- assign Courses template to courses page
+- assign Courses Page Overview template to a course
+
+***** CONFIGURATION
+# Wordpress v3.5
+- timezone: vienna
+- landing page: static page "Landing Page"
+- article page: page "Blog"
+- diabled the necessity of an authorized comment to publish comment automatically
+- custom permalink /%category%/%postname%/
+
+# PlugIns
+- Add image_src Meta Tag v1.1
+- Add Tags And Category To Page v0.3
+- Advanced Custom Fields v3.5.7.1
+- Advanced Custom Fields - Taxonomy Field add-on v1.4
+- Custom Post Type UI v0.7.2
+- Event Organiser v1.6.3
+- Leaflet Maps Marker ® v3.3
+- Post Revision Display 0.9
+  - enabled show revisions on single posts
+  - enabled show revisions on pages
+  - enabled manual mode
+- Social v2.7
+- Syntax Highlighter ComPress v3.0.83.3
+  - emacs mode
+- TinyMCE Advanced 3.5.8
+- Twitter Embed v1.1.1
+- Twitter Tools v3.0.3
+- WordPress Importer v0.6
+- WP Social Share Privacy v1.1.6
 *** 0.1.3 - Articles
+- change php code structure to classes
 ** 0.x - Project Basics
 ** 0.x - Blog Basics
 ** 0.x - Science Basics
@@ -437,6 +496,7 @@ Get the Meta Pages from there and also find the specific content
 *** 0.x.y - Export EPUB
 *** 0.x.y - Export CSV
 *** 0.x.y - Shortcodes
+** 0.x - Settings
 ** 0.x - Layout & Design
 - Calendar Logo for Subscribe Section in Sidebar
 - Creative Commons Logos in different sizes
@@ -448,6 +508,7 @@ Get the Meta Pages from there and also find the specific content
 ** 0.x - Events Advanced
 ** 0.x - Profile Advanced
 ** 0.x - Multi Language 
+** 0.x - User Rights Management
 ** 0.x - DOCUMENTATION
 - manual authors: offer own open science profile page, 
 *** INSTALLATION

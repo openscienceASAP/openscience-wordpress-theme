@@ -995,6 +995,11 @@ function get_lang($language, $ID) {
 			$text['de'] = "Verbundene Projekte";
 			$text['en'] = "Related Projects";
 			break;
+
+		case "freeuniversity":
+			$text['de'] = "Freie Universität";
+			$text['en'] = "Free University";
+			break;
 	}
 	echo $text[$language];
 }
@@ -1068,6 +1073,99 @@ function get_all_tags( $category ) {
 	</lu> <?php
 }
 
+/**
+ * Returns Etherpad Link, if there is one
+ * 
+ * @since Open Science 0.1.2
+ */
+function get_etherpad_link() { 
+	$url = get_field('etherpad');
+	if( validate_URL($url) ) { ?>
+		<li><a href="<?php echo $url; ?>">Etherpad</a></li> <?php
+	}
+}
+
+/**
+ * Returns Wiki Link, if there is one
+ * 
+ * @since Open Science 0.1.2
+ */
+function get_wiki_link() { 
+	$url = get_field('wiki-page');
+	if( validate_URL($url) ) { ?>
+		<li><a href="<?php echo $url; ?>">Wiki</a></li> <?php
+	}
+}
+
+/**
+ * Validates URL via regex
+ * 
+ * @since Open Science 0.1.2
+ */
+function validate_URL( $url ) { 
+	$urlregex = "^(https?|ftp)\:\/\/([a-z0-9+!*(),;?&=\$_.-]+(\:[a-z0-9+!*(),;?&=\$_.-]+)?@)?[a-z0-9+\$_-]+(\.[a-z0-9+\$_-]+)*(\:[0-9]{2,5})?(\/([a-z0-9+\$_-]\.?)+)*\/?(\?[a-z+&\$_.-][a-z0-9;:@/&%=+\$_.-]*)?(#[a-z_.-][a-z0-9+\$_.-]*)?\$";
+	if (eregi($urlregex, $url)) {return TRUE ;} else {return FALSE;}
+}
+
+/**
+ * Returns University Link, if there is one
+ * 
+ * @since Open Science 0.1.2
+ */
+function get_university_link() { 
+	$url = get_field('university_url');
+	if( validate_URL($url) ) {
+		return $url;
+	}
+}
+
+/**
+ * Returns Course Platform Link, if there is one
+ * 
+ * @since Open Science 0.1.2
+ */
+function get_platform_link() { 
+	$url = get_field('course_platform_url');
+	if( validate_URL($url) ) {
+		return $url;
+	}
+}
+
+/**
+ * Returns Course Page Link, if there is one
+ * 
+ * @since Open Science 0.1.2
+ */
+function get_course_link() { 
+	$url = get_field('course_page');
+	if( validate_URL($url) ) {
+		return $url;
+	}
+}
+
+/**
+ * Returns Teacher Link, if there is one
+ * 
+ * @since Open Science 0.1.2
+ */
+function get_teacher_link() { 
+	$url = get_field('teacher_url');
+	if( validate_URL($url) ) {
+		return $url;
+	}
+}
+
+/**
+ * Returns Free University Link, if there is one
+ * 
+ * @since Open Science 0.1.2
+ */
+function get_freeuniversity_link() {
+	$url = get_field('free_university');
+	if( validate_URL($url) ) {
+		return $url;
+	}
+}
 
 
 

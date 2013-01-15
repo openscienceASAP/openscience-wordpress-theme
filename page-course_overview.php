@@ -41,8 +41,8 @@ get_header(); ?>
 						<h2><?php echo get_lang($short_lang, "participation"); ?></h2>
 						<div class="participation_options">
 							<ul>
-								<li><a href="<?php the_field('wiki-page'); ?>">Wiki Page</a></li>
-								<li><a href="<?php the_field('etherpad'); ?>">Etherpad</a></li>
+								<?php get_wiki_link();
+								get_etherpad_link(); ?>
 							<ul>
 						</div>
 						<div class="participants">

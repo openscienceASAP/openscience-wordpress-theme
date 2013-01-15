@@ -38,9 +38,10 @@
 					<li><?php echo get_lang($short_lang, "duration"); ?>: <?php echo the_field('course_duration'); ?> <?php echo get_lang($short_lang, "weeks"); ?></li>
 					<li><?php echo get_lang($short_lang, "workload"); ?>: <?php the_field('course_workload') . get_lang($short_lang, "hperweek"); ?></li>
 					<li><?php echo get_lang($short_lang, "language"); ?>: <?php get_flag( $short_lang, "medium" ); ?></li>
-					<li><a href="<?php echo the_field('university_url'); ?>"><?php the_field('university_name'); ?></a></li>
-					<li><a href="<?php echo the_field('course_page'); ?>"><?php echo get_lang($short_lang, "course"); ?></a> @ <a href="<?php echo the_field('course_platform_url'); ?>"><?php the_field('course_platform') ?></a></li>
-					<li><?php echo get_lang($short_lang, "teacher"); ?>: <?php the_field('teacher_name') ?> <a href="http://www.twitter.com/<?php echo the_field('teacher_twitter'); ?>">T</a> + <a href="<?php echo the_field('teacher_url'); ?>">W</a></li>
+					<li><a href="<?php echo get_university_link(); ?>"><?php the_field('university_name'); ?></a></li>
+					<li><a href="<?php echo get_course_link(); ?>"><?php echo get_lang($short_lang, "course"); ?></a> @ <a href="<?php echo get_platform_link(); ?>"><?php the_field('course_platform') ?></a></li>
+					<li><?php echo get_lang($short_lang, "teacher"); ?>: <?php the_field('teacher_name') ?> <a href="http://www.twitter.com/<?php echo the_field('teacher_twitter'); ?>">T</a> + <a href="<?php echo get_teacher_link(); ?>">W</a></li>
+					<li><a href="<?php echo get_freeuniversity_link(); ?>" title="Free University"><?php echo get_lang($short_lang, 'freeuniversity' ); ?></a></li>
 				</ul>
 			</div>
 
