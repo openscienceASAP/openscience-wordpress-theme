@@ -1,13 +1,13 @@
 /*
-Theme Name: Twenty Twelve
-Theme URI: http://wordpress.org/themes/twentytwelve
-Author: the WordPress team
-Author URI: http://wordpress.org/
-Description: The 2012 theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
-Version: 1.2
+Theme Name: openscienceASAP.org
+Theme URI: http://openscience.alpine-geckos.at/projects/openscienceasaporg-wordpress-theme/
+Author: openscienceASAP.org Team
+Author URI: http://openscienceasap.org/
+Description: The openscienceASAP.org theme is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background. It is based on the 2012 standard theme of wordpress.
+Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, open science, wissenschaft, 
 Text Domain: twentytwelve
 
 This theme, like WordPress, is licensed under the GPL.
@@ -487,13 +487,23 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
 	color: #444;
+	padding-top: 5px;
+	border-top: 10px solid #FFBC3E;
+	border-bottom: 40px solid #402F0F;
 }
 body.custom-font-enabled {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+#main,
+.top-menu h1,
+.top-menu h2,
+#site-navigation,
+footer[role="contentinfo"] {
+	padding: 0 20px; 
+}
 a {
 	outline: none;
-	color: #21759b;
+	color: #3E91FF;
 }
 a:hover {
 	color: #0f3647;
@@ -522,8 +532,6 @@ a:hover {
 
 /* Page structure */
 .site {
-	padding: 0 24px;
-	padding: 0 1.714285714rem;
 	background-color: #fff;
 }
 .site-content {
@@ -668,6 +676,7 @@ footer[role="contentinfo"] {
 	margin-right: auto;
 	padding: 24px 0;
 	padding: 1.714285714rem 0;
+	overflow: hidden;
 }
 footer[role="contentinfo"] a {
 	color: #686868;
@@ -954,7 +963,6 @@ img.aligncenter,
 	padding: 6px 10px 6px 0;
 }
 .site-content article {
-	border-bottom: 4px double #ededed;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
 	padding-bottom: 24px;
@@ -1443,11 +1451,22 @@ img#wpstats {
 		float: right;
 		width: 80%;
 	}
-	.site {
+	.site,
+	#site-navigation,
+	#masthead,
+	footer[role="contentinfo"] {
 		margin: 0 auto;
 		max-width: 960px;
 		max-width: 68.571428571rem;
 		overflow: hidden;
+	}
+	#main,
+	#top-menu h1,
+	#top-menu h2,
+	#site-navigation,
+	footer[role="contentinfo"] {
+		padding: 0 20px;
+		padding: 0 2.857142857rem;
 	}
 	.site-content {
 		float: left;
@@ -1601,16 +1620,15 @@ img#wpstats {
 /* Minimum width of 960 pixels. */
 @media screen and (min-width: 960px) {
 	body {
-		background-color: #e6e6e6;
+		background-color: white;
+		padding-top: 10px;
 	}
-	body .site {
-		padding: 0 40px;
-		padding: 0 2.857142857rem;
-		margin-top: 48px;
-		margin-top: 3.428571429rem;
-		margin-bottom: 48px;
-		margin-bottom: 3.428571429rem;
-		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	#main,
+	.top-menu h1,
+	.top-menu h2,
+	#site-navigation,
+	footer[role="contentinfo"] {
+		padding: 0;
 	}
 	body.custom-background-empty {
 		background-color: #fff;
@@ -1740,3 +1758,5 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
+
+
