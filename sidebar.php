@@ -10,8 +10,15 @@
  */
 ?>
 
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-		<div id="secondary" class="widget-area" role="complementary">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		</div><!-- #secondary -->
-	<?php endif; ?>
+<div id="sidebar-stream" class="sidebar-right">
+	<div id="button-research" class="button-sidebar-stream"><a href="http://www.orf.at" title="Research">Research</a></div>
+	<div id="button-education" class="button-sidebar-stream"><a href="http://www.orf.at" title="Education">Education</a></div>
+	<div id="button-projects-resources" class="button-sidebar-stream"><a href="http://www.orf.at" title="Projects and Resources">Projects and Resources</a></div>
+	<div id="button-social" class="button-sidebar-stream"><a href="http://www.orf.at" title="Social">Social</a></div>
+</div>
+
+
+
+
+
+

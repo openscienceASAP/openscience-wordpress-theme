@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Landing Page
+ * Template Name: Stream
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -15,31 +15,11 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
+		<div class="sidebar-left"></div>
+		<?php get_sidebar(); ?>
 		<div id="content" role="main">
-			<article id="landing-page" class="page type-page status-publish hentry">
-				<div id="introduction">
-					<div id="openscience">
-						<h2>Open Science</h2>
-						Open Science öffnet Wissenschaft und ermöglicht allen einfach und unkompliziert die Teilhabe daran.
-		
-						Dabei ist Wissenschaft sehr weit gedacht und schliesst alle Disziplinen, die Lehre dazu sowie Projekte und Ressourcen rund herum mit ein.
-					</div>
-					<div id="asap">
-						<h2>AS A Practice</h2>
-						
-					</div>
-					<div id="get-involved">
-						<h2>Get Involved!</h2>
-						<ul>
-							<li>Schreiben und Durchführen von Forschung, Kursen und Projekten</li>
-							<li>Tools entwickeln</li>
-							<li>Newsletter abonnieren</li>
-							<li>Support</li>
-						</ul>
-					</div>
-				</div>
 				<div id="stream">
-					<h2><a href="http://openscienceasap.org/stream" title="Stream openscienceASAP">Stream</a></h2>
+					<h2>Stream</h2>
 					<?php $i = 1;
 					$queryStream = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'orderby' => 'date') );
 					while ( $queryStream->have_posts() ) : $queryStream->the_post(); { ?>
@@ -67,9 +47,7 @@ get_header(); ?>
 
 					} endwhile; // end of the loop. ?>
 				</div>
-			</article>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

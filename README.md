@@ -1,9 +1,6 @@
-openscience-wordpress-theme
+Open Science Wordpress Theme
 ===========================
 
-# Open Science Wordpress Theme
-
-## DESCRIPTION
 The Theme together with an Wordpress Installation will provide a customizeable, easy-to-use platform to publish open science content, from ordinary blogging to open access papers. Here just a few of the main functions the Open Science Theme should provide.
 
 Here just a few of the main functions the Open Science Theme should provide:
