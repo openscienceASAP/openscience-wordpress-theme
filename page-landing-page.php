@@ -18,22 +18,36 @@ get_header(); ?>
 		<div id="landing-page">
 			<div id="about">
 				<div id="openscience">
-					<h2>Open Science</h2>
-					Open Science öffnet Wissenschaft und ermöglicht allen einfach und unkompliziert die Teilhabe daran.
+					<h2 class="landingpage-header">Open Science</h2>
+					<div>
+					<strong>Open Science öffnet Wissenschaft</strong> und ermöglicht allen einfach und unkompliziert die Teilhabe daran.
 	
-					Dabei ist Wissenschaft sehr weit gedacht und schliesst alle Disziplinen, die Lehre dazu sowie Projekte und Ressourcen rund herum mit ein.
+					Dabei ist Wissenschaft sehr weit gedacht und schliesst alle Disziplinen, sowie Lehre, Projekte und Ressourcen dazu, mit ein.
+					</div>
 				</div>
 				<div id="asap">
-					<h2>AS A Practice</h2>
+					<h2 class="landingpage-header">AS A Practice</h2>
+					<div>
+					<strong>openscienceASAP.org</strong> ist eine Plattform um 
+					<ul>
+						<li>offene Wissenschaft zu betreiben,</li>
+						<li>sich eine offene Arbeitsweise anzueignen</li>
+						<li>und sich dazu auszutauschen</li>
+					</ul>
+					 ...the practical way!
+					</div>
 				</div>
 				<div id="get-involved">
-					<h2>Get Involved!</h2>
-					<ul>
-						<li>Schreiben und Durchführen von Forschung, Kursen und Projekten</li>
-						<li>Tools entwickeln</li>
-						<li>Newsletter abonnieren</li>
-						<li>Support</li>
-					</ul>
+					<h2 class="landingpage-header">Get Involved!</h2>
+					<div>
+						Nutze die Plattform für dich:
+						<ul>
+							<li>Öffne deine Ideen und Werke aus Forschung, Kursen und Projekten</li>
+							<li>Tools entwickeln</li>
+							<li>Bloggen</li>
+							<li>Wissensaustausch</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<h2 class="button stream"><a href="http://openscienceasap.org/stream" title="Stream openscienceASAP">Stream</a></h2>
@@ -41,23 +55,28 @@ get_header(); ?>
 				<?php $i = 1;
 				$queryStream = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'orderby' => 'date') );
 				while ( $queryStream->have_posts() ) : $queryStream->the_post(); { ?>
-					<div id="post-preview-<?php echo $i; ?>">
+					<div id="post-preview-<?php echo $i; ?>" class="post-preview-box">
 						<h3 class="preview-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 						<?php if( has_post_thumbnail()) {
 							$image_id = get_post_thumbnail_id ($post->ID ); 
-            				$image_thumb_url = wp_get_attachment_image_src( $image_id,'small-thumb');                              
+            				$image_thumb_url = wp_get_attachment_image_src( $image_id,'thumb-preview');                              
             				$attr = array(
 		                		'class' => "folio-sample",                                  
                 				'rel' => $image_thumb_url[0], // REL attribute is used to show thumbnails in the Nivo slider, can be skipped if you don't want thumbs or using other slider
             				);
-            				?><a class="thumb" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('myFeature', $attr); ?></a><?php
-						} else { ?>
-            				<div class="thumb">
-            					<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo( 'template_directory');?>/images/thumbs/thumb-<?php echo $catName; ?>.jpg" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" widht="300" height="260"></a>
+            				?>
+            				<div id="thumb-<?php echo $i; ?>" class="thumb">
+            					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb-preview', $attr); ?></a>
+            				</div>
+            			<?php } else { ?>
+            				<div id="thumb-<?php echo $i; ?>" class="thumb">
+            					<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo( 'template_directory');?>/images/thumbs/thumb-<?php echo $catName; ?>.jpg" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" widht="300" height="240"></a>
            					</div>
            				<?php 
            				}
-						$list_cats = get_category_parents(get_the_category()[0], true, ",");
+           				$cats = get_the_category();
+           				$cat = $cats[0];
+						$list_cats = get_category_parents($cat, true, ",");
 						$arr_cats = explode(",", $list_cats); ?>
 						<div class="preview-category">
 							<?php echo $arr_cats[0] . " : " . $arr_cats[count($arr_cats)-2]; ?>

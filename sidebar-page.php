@@ -10,7 +10,20 @@
  */
 ?>
 
-<div id="sidebar-page" class="sidebar-right">
-	Subpages!
-	Meta Values: Licence, Author, => enfolding!
-</div>
+	<?php 
+	$children = wp_list_pages( array(
+		'child_of' => get_the_ID(), // Only pages that are children of the current page
+		'depth' => 1 ,   // Only show one level of hierarchy
+		'sort_order' => 'asc',
+		'title_li' => '',
+		'echo' => '0',
+		'post_status'  => 'publish' 
+	)); 
+	if($children) {
+		?><div id="sidebar-page" class="sidebar-right"><h2>Navigation</h2> <?php
+		echo $children;
+		?></div><?php
+	} else { ?>
+		<div id="sidebar-page" class="sidebar-empty"></div>
+	<?php }
+	?>

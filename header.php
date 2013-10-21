@@ -35,25 +35,23 @@
 <body <?php body_class(); ?>>
 	<header id="masthead" class="site-header" role="banner">
 		<div id="nav-top">
+			<div id="nav-top-right">
+				<!--<?php get_search_form(); ?>-->
+				<span class="nav-top-icons"><a href="https://twitter.com/openscienceASAP" title="Twitter openscienceASAP" class="icon-twitter-2"></a></span>
+				<span class="nav-top-icons"><a href="https://github.com/openscienceASAP" title="Github openscienceASAP" class="icon-github-text"></a></span>
+				<span class="nav-top-icons"><a href="<?php bloginfo('rss2_url'); ?>" title="RSS openscienceASAP.org" class="icon-rss-2"></a></span>
+				<!-- <span class="icon-menu"></span>Login, Register, Newsletter -->
+			</div>
 			<div id="logo-openscienceASAP">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri() . "/images/logo_300x44.png"; ?>" width="200" alt="openscienceASAP Logo"/></a>
 			</div>
 			<div id="nav-top-menu-center">
-				About
-				What is? => Open Science, FAQ
-				Get Involved! => Blogging, Newsletter, Support
+				<span><a href="/open-science" title="Open Science">Open Science?</a></span>
+				<span>|</span>
+				<span><a href="/about" title="About">ASAP</a></span>
+				<span>|</span>
+				<span><a href="/get-involved" title="Get Involved">Get Involved!</a></span>
 			</div>
-			<div id="nav-top-right">
-				<!--<?php get_search_form(); ?>-->
-				<a href="https://twitter.com/openscienceASAP" title="Twitter openscienceASAP" class="icon-twitter-2"></a>
-				<a href="https://github.com/openscienceASAP" title="Github openscienceASAP" class="icon-github-text"></a>
-				<a href="<?php bloginfo('rss2_url'); ?>" title="RSS openscienceASAP.org" class="icon-rss-2"></a>
-				<span class="icon-menu"></span>
-					Login
-					Register
-					Newsletter
-			</div>
-			
 		</div>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>

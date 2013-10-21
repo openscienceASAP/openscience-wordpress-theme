@@ -536,9 +536,8 @@ a:hover {
 #main,
 #nav-top,
 #site-navigation,
-#footer-sidebar,
-#landing-page {
-	padding: 0 20px; 
+#footer-sidebar {
+	padding: 0 3%; 
 }
 #content {
 	margin: 0 auto;
@@ -579,15 +578,11 @@ a:hover {
 	line-height: 1.846153846;
 	color: #757575;
 }
-.header-image {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-}
 #logo-openscienceASAP {
 	float: left;
 }
-#nav-top {
-	background-color: #B5B5B5
+.nav-menu {
+	font-size: 2rem;
 }
 #nav-top a {
 	color: #444444;
@@ -609,8 +604,7 @@ a:hover {
 .main-navigation li {
 	margin-top: 24px;
 	margin-top: 1.714285714rem;
-	font-size: 12px;
-	font-size: 0.857142857rem;
+	font-size: 20px;
 	line-height: 1.42857143;
 }
 .main-navigation a {
@@ -627,43 +621,61 @@ a:hover {
 .menu-toggle {
 	display: inline-block;
 }
+.nav-top-icons {
+	font-size: 24px;
+}
+#nav-top-menu-center {
+	font-size: 14px;
+	font-size: 1rem;
+	float: left;
+	margin: 7px 3% 5px 3%;
+}
+#nav-top {
+	padding: 10px 0px 10px 0px;
+}
+#nav-top-right {
+	padding-right: 3%;
+	padding-bottom: 10px;
+}
+#logo-openscienceASAP {
+	padding-left: 3%;
+}
+a[title="stream"] {
+	font-size: 1.5rem;
+	line-height: 1;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	padding: 0px 30px 0px 10px;	
+	margin-right: 30px;
+	border-right: 5px solid #402F0F;
+}
 
 /* Landing Page */
 #about {
-	padding-top: 20px;
-}
-#openscience {
-	width: 300px;
-	float:left;
-	padding: 10px 20px 50px 0px;
+	font-size: 1.3rem;
+	line-height: 1.3;
 }
 #about h2 {
 	font-size: 2rem;
 	padding-bottom: 10px;
 }
-#openscience h2 {
-}
-#asap h2 {
-}
-#get-involved h2 {
-}
+#openscience,
 #asap {
 	width: 300px;
 	float:left;
-	padding-right: 20px;
-	padding: 10px 20px 50px 0px;
+	margin: 10px 30px 10px 0px;
 }
 #get-involved {
 	width: 300px;
 	float:left;
-	padding-left: 20px;
-	padding: 10px 20px 50px 0px;
+	margin: 10px 0px 10px 0px;
 }
-#stream {
-	margin-bottom: 50px;
+#get-involved ul,
+#asap ul {
+	margin-left: 30px;
+	list-style-type: circle;
 }
 .stream {
-	margin-right: 100%;
+	margin: 30px 100% 5px 0px;
 	float:left;
 }
 #stream a,
@@ -674,37 +686,25 @@ a:hover {
 #stream a {
 	color: #3E91FF;
 }
-#post-preview-1 {
+.post-preview-box {
 	width: 298px;
-	height: 300px;
+	height: 298px;
 	float:left;
-	margin-top: 10px;
-	margin-right: 30px;
 	border: 1px solid #ccc;
     border-radius: 6px;
+}
+#post-preview-1 {
+	margin: 10px 30px 10px 0px;
 }
 #post-preview-2 {
-	width: 298px;
-	height: 300px;
-	float:left;
-	margin-top: 10px;
-	margin-right: 30px;
-	border: 1px solid #ccc;
-    border-radius: 6px;
+	margin: 10px 30px 10px 0px;
 }
 #post-preview-3 {
-	width: 298px;
-	height: 300px;
-	margin-top: 10px;
-	margin-bottom: 30px;
-	float:left;
-	border: 1px solid #ccc;
-    border-radius: 6px;
+	margin: 10px 0px 40px 0px;
 }
 .thumb {
-	width: 298px;
+	width: 296px;
 	height: 240px;
-	background-color: grey;
 }
 .preview-title {
 	height: 32px;
@@ -730,33 +730,18 @@ section[role="banner"] {
 }
 
 /* Sidebar */
-.sidebar-left,
-.sidebar-right {
-	width: 180px;
-	height: 200px;
-}
-.sidebar-left {
-	float: left;
-	margin-right: 20px;
-}
-.sidebar-right {
-	float: right;
-	margin-left: 20px;
-}
 
 /* Footer */
 footer {
-	background: #402F0F;
 }
 footer[role="contentinfo"] {
+	background: #402F0F;
 	color: white;
 	border-top: 1px solid #ededed;
 	clear: both;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
 	padding: 24px 0 40px 0;
 	padding: 1.714285714rem 0 2.857142857rem 0;
 	overflow: hidden;
@@ -768,21 +753,20 @@ footer[role="contentinfo"] a {
 footer[role="contentinfo"] a:hover {
 	color: #21759b;
 }
-#legal {
-	width:270px;
-	padding-right: 50px;
+#newsletter {
+	margin: 10px 145px 10px 0px;
+	list-style-type: none; 
 	float: left;
 }
 #social {
-	width:270px;
-	padding-left: 30px;
-	padding-right: 30px;
-	float: left;
+	margin: 10px 113px 10px 0px;
 	list-style-type: none; 
+	float: left;
 }
-#newsletter {
-	padding-left: 30px;
-	float: right;
+#legal {
+	width:270px;
+	margin: 10px 30px 10px 0px;
+	float: left;
 }
 .impressum {
 	margin-bottom: 20px;
@@ -1565,13 +1549,6 @@ img#wpstats {
 		max-width: 68.571428571rem;
 		overflow: hidden;
 	}
-	#main,
-	#nav-top,
-	#site-navigation,
-	#footer-sidebar {
-		padding: 0 20px;
-		padding: 0 1.428571429rem;
-	}
 	.site-content {
 		float: left;
 		width: 65.104166667%;
@@ -1595,12 +1572,15 @@ img#wpstats {
 		line-height: 1.846153846;
 		margin-bottom: 0;
 	}
+	#nav-top-menu-center {
+		float: right;
+		margin: 7px 10px 5px 10px;
+	}
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
 		border-bottom: 1px solid #ededed;
 		border-top: 1px solid #ededed;
 		display: inline-block !important;
-		text-align: left;
 		width: 100%;
 	}
 	.main-navigation ul {
@@ -1615,7 +1595,7 @@ img#wpstats {
 	.main-navigation li a {
 		border-bottom: 0;
 		color: #6a6a6a;
-		line-height: 3.692307692;
+		line-height: 2.5;
 		text-transform: uppercase;
 		white-space: nowrap;
 	}
@@ -1730,7 +1710,8 @@ img#wpstats {
 	#logo-openscienceASAP,
 	#site-navigation,
 	#footer-sidebar,
-	#landing-page {
+	#landing-page,
+	#nav-top-right {
 		padding: 0;
 	}
 	body.custom-background-empty {
@@ -1742,6 +1723,131 @@ img#wpstats {
 		margin-top: 0;
 		margin-bottom: 0;
 		box-shadow: none;
+	}
+	#nav-top {
+		padding: 5px 0px 5px 0px;
+	}
+	#nav-top-right {
+		padding
+	}
+	.nav-top-icons {
+		font-size: 24px;
+	}
+	#nav-top-menu-center {
+		font-size: 14px;
+		font-size: 1rem;
+		float: right;
+		margin: 7px 50px 0px 50px;
+	}
+	#about h2 {
+		font-size: 2rem;
+		padding-bottom: 10px;
+	}
+	#openscience,
+	#asap {
+		width: 300px;
+		float:left;
+		margin: 10px 30px 10px 0px;
+	}
+	#get-involved {
+		width: 300px;
+		float:left;
+		margin: 10px 0px 10px 0px;
+	}
+	.stream {
+		margin: 30px 100% 5px 0px;
+		float:left;
+	}
+	#stream a,
+	.stream a {
+		text-decoration: none;
+		color: white;
+	}
+	#stream a {
+		color: #3E91FF;
+	}
+	.post-preview-box {
+		width: 298px;
+		height: 300px;
+		float:left;
+		border: 1px solid #ccc;
+	    border-radius: 6px;
+	}
+	#post-preview-1 {
+		margin: 10px 30px 10px 0px;
+	}
+	#post-preview-2 {
+		margin: 10px 30px 10px 0px;
+	}
+	#post-preview-3 {
+		margin: 10px 0px 40px 0px;
+	}
+	.thumb {
+		width: 298px;
+		height: 240px;
+	}
+	.preview-title {
+		height: 32px;
+	}
+	#stream a {
+		vertical-align: middle;
+	}
+	.preview-category {
+		float: right;
+	}
+	#stream .preview-category a {
+		color: #444444;
+	}
+	h3.preview-title,
+	.preview-category {
+		padding: 3px 5px;
+	}
+	.sidebar-left {
+		width: 80px;
+		height: 1px;
+		float: left;
+		margin-right: 20px;
+	}
+	.sidebar-empty {
+		width: 80px;
+		height: 200px;
+		height: 1px;
+		float: right;
+		margin-right: 20px;
+	}
+	.sidebar-right {
+		width: 220px;
+		border: solid 5px #402F0F;
+		border-radius: 10px;
+		padding: 10px;
+		float: right;
+		margin-left: 30px;
+	}
+	.sidebar-right h2 {
+		font-size: 18px;
+		font-size: 1.285714286rem;
+		padding-bottom: 6px;
+	}
+	.sidebar-right li {
+		margin-left: 25px;
+	}
+	.sidebar-right li a {
+		text-decoration: none;
+	}
+	#newsletter {
+		margin: 10px 145px 10px 0px;
+		list-style-type: none; 
+		float: left;
+	}
+	#social {
+		margin: 10px 113px 10px 0px;
+		list-style-type: none; 
+		float: left;
+	}
+	#legal {
+		width:270px;
+		margin: 10px 30px 10px 0px;
+		float: left;
 	}
 }
 

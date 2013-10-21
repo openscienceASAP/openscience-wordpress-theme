@@ -500,4 +500,22 @@ function load_jquery() {
  *
  * @since openscienceASAP 0.1
  */
-//add_image_size( "thumb-preview", "", "600",  );
+
+
+// Add new image sizes
+function custom_images_insert_menu ( $image_sizes ) {
+  global $_wp_additional_image_sizes;
+  if ( empty( $_wp_additional_image_sizes ) )
+    return $image_sizes;
+
+  foreach ( $_wp_additional_image_sizes as $id => $data ) {
+    if ( !isset($image_sizes[$id]) )
+      $image_sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
+  }
+  return $image_sizes;
+}
+function custom_imagesizes_setup () {
+	add_image_size( "thumb-preview", "298", "240", true );
+  add_filter( 'image_size_names_choose', 'custom_images_insert_menu' );
+}
+add_action( 'after_setup_theme', 'custom_imagesizes_setup' );

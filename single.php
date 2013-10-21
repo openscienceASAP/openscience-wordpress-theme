@@ -10,14 +10,14 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
-		<div id="sidebar-left"></div>
-		<?php get_sidebar(); ?>
+		<div class="sidebar-left"></div>
 		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
-
+				<?php if ( function_exists('socialshareprivacy') ) { socialshareprivacy(); } ?>
+				<?php the_flattr_permalink(); ?>
 				<nav class="nav-single">
 					<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
 					<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'twentytwelve' ) . '</span> %title' ); ?></span>

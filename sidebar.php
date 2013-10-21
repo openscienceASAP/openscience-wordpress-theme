@@ -10,15 +10,12 @@
  */
 ?>
 
-<div id="sidebar-stream" class="sidebar-right">
-	<div id="button-research" class="button-sidebar-stream"><a href="http://www.orf.at" title="Research">Research</a></div>
-	<div id="button-education" class="button-sidebar-stream"><a href="http://www.orf.at" title="Education">Education</a></div>
-	<div id="button-projects-resources" class="button-sidebar-stream"><a href="http://www.orf.at" title="Projects and Resources">Projects and Resources</a></div>
-	<div id="button-social" class="button-sidebar-stream"><a href="http://www.orf.at" title="Social">Social</a></div>
+<div id="sidebar-page" class="sidebar-right">
+	<h2>Navigation</h2>
+	<li><a href="http://openscienceasap.org/category/research" title="Research">Research</a></li>
+	<li><a href="http://openscienceasap.org/category/education" title="Education">Education</a></li>
+	<li><a href="http://openscienceasap.org/category/projects" title="Projects and Resources">Projects and Resources</a></li>
+	<li><a href="http://openscienceasap.org/category/social" title="Social">Social</a></li>
 </div>
-
-
-
-
 
 
