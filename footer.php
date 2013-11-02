@@ -28,7 +28,7 @@
 		</div>
 		<div id="social">
 			<h2>Social</h2>
-			<li><a href="https://vimeo.com/openscienceasap" title="Vimeo openscienceASAP" class="icon-email"></a>office [ett] openscienceasap dot org</li>
+			<li><a href="/contact" title="Vimeo openscienceASAP" class="icon-email"></a>office [ett] openscienceasap dot org</li>
 			<li><a href="https://twitter.com/openscienceASAP" title="Twitter openscienceASAP" class="icon-twitter-2"></a>@openscienceASAP</li>
 			<li><a href="https://github.com/openscienceasap" title="GitHub openscienceASAP" class="icon-github-text"></a>GitHub</li>
 			<li><a href="https://www.youtube.com/user/openscienceasap" title="Youtube openscienceASAP" class="icon-youtube-1"></a>Youtube</li>

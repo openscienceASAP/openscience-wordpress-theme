@@ -359,7 +359,8 @@ video {
 .widget img,
 img.header-image,
 .author-avatar img,
-img.wp-post-image {
+img.wp-post-image,
+.featured-image {
 	/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
 	border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -473,6 +474,33 @@ img.wp-smiley,
 	margin-top: 0;
 }
 
+/* Navigation Menu */
+.main-navigation {
+	margin-top: 24px;
+	margin-top: 1.714285714rem;
+	text-align: center;
+}
+.main-navigation li {
+	margin-top: 24px;
+	margin-top: 1.714285714rem;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 1.42857143;
+}
+.main-navigation a {
+	color: #5e5e5e;
+}
+.main-navigation a:hover {
+	color: #21759b;
+}
+.main-navigation ul.nav-menu,
+.main-navigation div.nav-menu > ul {
+	display: none;
+}
+.main-navigation ul.nav-menu.toggled-on,
+.menu-toggle {
+	display: inline-block;
+}
 
 /* =Basic structure
 -------------------------------------------------------------- */
@@ -595,60 +623,6 @@ a:hover {
 	float: right;
 }
 
-/* Navigation Menu */
-.main-navigation {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	text-align: center;
-}
-.main-navigation li {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	font-size: 20px;
-	line-height: 1.42857143;
-}
-.main-navigation a {
-	color: #5e5e5e;
-}
-.main-navigation a:hover {
-	color: #21759b;
-}
-.main-navigation ul.nav-menu,
-.main-navigation div.nav-menu > ul {
-	display: none;
-}
-.main-navigation ul.nav-menu.toggled-on,
-.menu-toggle {
-	display: inline-block;
-}
-.nav-top-icons {
-	font-size: 24px;
-}
-#nav-top-menu-center {
-	font-size: 14px;
-	font-size: 1rem;
-	float: left;
-	margin: 7px 3% 5px 3%;
-}
-#nav-top {
-	padding: 10px 0px 10px 0px;
-}
-#nav-top-right {
-	padding-right: 3%;
-	padding-bottom: 10px;
-}
-#logo-openscienceASAP {
-	padding-left: 3%;
-}
-a[title="stream"] {
-	font-size: 1.5rem;
-	line-height: 1;
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-	padding: 0px 30px 0px 10px;	
-	margin-right: 30px;
-	border-right: 5px solid #402F0F;
-}
-
 /* Landing Page */
 #about {
 	font-size: 1.3rem;
@@ -662,7 +636,8 @@ a[title="stream"] {
 #asap {
 	width: 300px;
 	float:left;
-	margin: 10px 30px 10px 0px;
+	margin: 10px 0px;
+	padding: 0px;
 }
 #get-involved {
 	width: 300px;
@@ -692,15 +667,11 @@ a[title="stream"] {
 	float:left;
 	border: 1px solid #ccc;
     border-radius: 6px;
-}
-#post-preview-1 {
-	margin: 10px 30px 10px 0px;
-}
-#post-preview-2 {
-	margin: 10px 30px 10px 0px;
+	margin: 10px 0px;
+	padding: 0px;
 }
 #post-preview-3 {
-	margin: 10px 0px 40px 0px;
+	margin-bottom: 30px;
 }
 .thumb {
 	width: 296px;
@@ -723,6 +694,37 @@ h3.preview-title,
 	padding: 3px 5px;
 }
 
+/* Content */
+.page-children-preview {
+	width: 250px;
+	border: solid 5px #402F0F;
+	border-radius: 10px;
+	margin: 20px 0px;
+}
+#children-preview .page-children-preview h3 {
+	padding-left: 20px;
+	margin: 10px 0px;
+}
+.page-children-preview .featured-image {
+	max-width: 250px;
+	max-height: 200px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.page-children-excerpt{
+	display: none;
+}
+.page-children-preview .small.button{
+	display:none;
+}
+.page-children-preview .small.button a{
+	text-decoration:none;
+	color: white;
+}
+.page-children-preview .small.button a:visited{
+	color: white;
+}
+
 /* Banner */
 section[role="banner"] {
 	margin-bottom: 48px;
@@ -730,6 +732,33 @@ section[role="banner"] {
 }
 
 /* Sidebar */
+.sidebar-right {
+	list-style-type: none;
+	margin-bottom: 20px;
+	width: 220px;
+	border: solid 5px #402F0F;
+	border-radius: 10px;
+	padding: 10px;
+	float: right;
+}
+.sidebar-right h2 {
+	font-size: 18px;
+	font-size: 1.285714286rem;
+	padding-bottom: 6px;
+}
+.sidebar-right ul {
+	margin-left: 10px;
+}
+.sidebar-right li a {
+	text-decoration: none;
+}
+.sidebar-empty {
+	width: 80px;
+	height: 1px;
+	height: 1px;
+	float: right;
+	margin-left: 20px;
+}
 
 /* Footer */
 footer {
@@ -1562,6 +1591,8 @@ img#wpstats {
 		float: right;
 		width: 26.041666667%;
 	}
+
+	/* Header */
 	.site-header h1,
 	.site-header h2 {
 		text-align: left;
@@ -1571,6 +1602,56 @@ img#wpstats {
 		font-size: 1.857142857rem;
 		line-height: 1.846153846;
 		margin-bottom: 0;
+	}
+	#logo-openscienceASAP {
+		padding-left: 3%;
+	}
+
+	/* Navigation Menu */
+	.main-navigation {
+		margin-top: 24px;
+		margin-top: 1.714285714rem;
+	}
+	.main-navigation li {
+		margin-top: 24px;
+		margin-top: 1.714285714rem;
+		font-size: 20px;
+		line-height: 1.42857143;
+	}
+	.main-navigation a {
+		color: #5e5e5e;
+	}
+	.main-navigation a:hover {
+		color: #21759b;
+	}
+	.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		display: none;
+	}
+	.main-navigation ul.nav-menu.toggled-on,
+	.menu-toggle {
+		display: inline-block;
+	}
+	.nav-top-icons {
+		font-size: 24px;
+	}
+	#nav-top-menu-center {
+		font-size: 14px;
+		font-size: 1rem;
+		float: left;
+		margin: 7px 3% 5px 3%;
+	}
+	#nav-top {
+		padding: 10px 0px 10px 0px;
+	}
+	#nav-top-right {
+		padding-right: 3%;
+		padding-bottom: 10px;
+	}
+	a[title="stream"] {
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		color: #402F0F;
+		margin-right: 80px;
 	}
 	#nav-top-menu-center {
 		float: right;
@@ -1699,6 +1780,12 @@ img#wpstats {
 		margin-left: 48px;
 		margin-left: 3.428571429rem;
 	}
+	#openscience,
+	#asap,
+	#get-involved,
+	.post-preview-box {
+		margin-right: 20px;
+	}
 }
 
 /* Minimum width of 960 pixels. */
@@ -1724,6 +1811,8 @@ img#wpstats {
 		margin-bottom: 0;
 		box-shadow: none;
 	}
+
+	/* Navigation */
 	#nav-top {
 		padding: 5px 0px 5px 0px;
 	}
@@ -1739,6 +1828,8 @@ img#wpstats {
 		float: right;
 		margin: 7px 50px 0px 50px;
 	}
+
+	/* Landing Page */
 	#about h2 {
 		font-size: 2rem;
 		padding-bottom: 10px;
@@ -1765,6 +1856,7 @@ img#wpstats {
 	}
 	#stream a {
 		color: #3E91FF;
+		vertical-align: middle;
 	}
 	.post-preview-box {
 		width: 298px;
@@ -1789,9 +1881,6 @@ img#wpstats {
 	.preview-title {
 		height: 32px;
 	}
-	#stream a {
-		vertical-align: middle;
-	}
 	.preview-category {
 		float: right;
 	}
@@ -1802,6 +1891,27 @@ img#wpstats {
 	.preview-category {
 		padding: 3px 5px;
 	}
+	/* Content */
+	.page-children-preview {
+		width: 100%;
+		max-width: 590px;
+	}
+	.page-children-excerpt{
+		display: block;
+		max-width: 310px;
+		max-height: 200px;
+		padding: 0px 15px;
+		float:right;
+	}
+	.page-children-preview .small.button{
+		display: block;
+		float:right;
+		position:relative;
+		bottom: 20px;
+		left: 5px;
+	}
+
+	/* Sidebar */
 	.sidebar-left {
 		width: 80px;
 		height: 1px;
@@ -1834,6 +1944,8 @@ img#wpstats {
 	.sidebar-right li a {
 		text-decoration: none;
 	}
+
+	/* Footer */
 	#newsletter {
 		margin: 10px 145px 10px 0px;
 		list-style-type: none; 

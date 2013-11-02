@@ -20,9 +20,10 @@
 		'post_status'  => 'publish' 
 	)); 
 	if($children) {
-		?><div id="sidebar-page" class="sidebar-right"><h2>Navigation</h2> <?php
-		echo $children;
-		?></div><?php
+		?><div class="sidebar-right"><h2>Navigation</h2> 
+			<ul>
+			<?php echo $children; ?></ul>
+		</div><?php
 	} else { ?>
 		<div id="sidebar-page" class="sidebar-empty"></div>
 	<?php }

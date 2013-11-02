@@ -43,7 +43,7 @@
 				<!-- <span class="icon-menu"></span>Login, Register, Newsletter -->
 			</div>
 			<div id="logo-openscienceASAP">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri() . "/images/logo_300x44.png"; ?>" width="200" alt="openscienceASAP Logo"/></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri() . "/images/logo_301x41.png"; ?>" width="200" alt="openscienceASAP Logo"/></a>
 			</div>
 			<div id="nav-top-menu-center">
 				<span><a href="/open-science" title="Open Science">Open Science?</a></span>
