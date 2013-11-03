@@ -15,16 +15,13 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
-		<div class="sidebar-left"></div>
 		<div id="content" role="main">
-
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'content', 'pagechildren' ); ?>
 				<?php if ( function_exists('socialshareprivacy') ) { socialshareprivacy(); } ?>
 				<?php the_flattr_permalink(); ?>
 				<?php echo pf_show_link();if(function_exists('pf_show_link')){echo pf_show_link();} ?>
 			<?php endwhile; // end of the loop. ?>
-
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

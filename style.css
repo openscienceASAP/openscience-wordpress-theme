@@ -1,6 +1,6 @@
 /*
 Theme Name: openscienceASAP.org
-Theme URI: http://openscience.alpine-geckos.at/projects/openscienceasaporg-wordpress-theme/
+Theme URI: https://github.com/openscienceASAP/openscience-wordpress-theme
 Author: openscienceASAP.org Team
 Author URI: http://openscienceasap.org/
 Description: The openscienceASAP.org theme is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background. It is based on the 2012 standard theme of wordpress.
@@ -8,7 +8,7 @@ Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, open science, wissenschaft, 
-Text Domain: twentytwelve
+Text Domain: openscienceasap
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -21,6 +21,17 @@ values (and line heights) are calculated using two variables:
 
 $rembase:     14;
 $line-height: 24;
+
+$yellow #FFBC3E
+$dark_yellow #402F0F
+$blue #3E91FF
+$dark_blue #0852B2
+$gray #E5E5E5
+
+Image sizes
+header image: 960 x 250
+post thumb: 298 x 240
+page thumb: 250 x 200
 
 ---------- Examples
 
@@ -729,35 +740,6 @@ h3.preview-title,
 section[role="banner"] {
 	margin-bottom: 48px;
 	margin-bottom: 3.428571429rem;
-}
-
-/* Sidebar */
-.sidebar-right {
-	list-style-type: none;
-	margin-bottom: 20px;
-	width: 220px;
-	border: solid 5px #402F0F;
-	border-radius: 10px;
-	padding: 10px;
-	float: right;
-}
-.sidebar-right h2 {
-	font-size: 18px;
-	font-size: 1.285714286rem;
-	padding-bottom: 6px;
-}
-.sidebar-right ul {
-	margin-left: 10px;
-}
-.sidebar-right li a {
-	text-decoration: none;
-}
-.sidebar-empty {
-	width: 80px;
-	height: 1px;
-	height: 1px;
-	float: right;
-	margin-left: 20px;
 }
 
 /* Footer */
@@ -1786,6 +1768,39 @@ img#wpstats {
 	.post-preview-box {
 		margin-right: 20px;
 	}
+
+	/* Content */
+	.page-children-preview {
+		width: 100%;
+		max-width: 590px;
+		height: 254px;
+	}
+	.page-children-preview .featured-image {
+		float: left;
+		background-color: gray;
+		height: 180px;
+		width: 240px;
+		margin-bottom: 0px;
+	}
+	.page-children-short-description {
+		margin: 0px 15px; 
+		max-width: 320px;
+		float: right;
+	}
+	.page-children-preview .page-children-icons {
+		width: 100%;
+		height: 25px; 
+		margin-bottom: 0px;
+		float:left;
+	}
+	.page-children-preview .small.button{
+		background-color: #402F0F;
+		display: block;
+		float: right;
+		position: relative;
+		left: 5px;
+		bottom: -4px;
+	}
 }
 
 /* Minimum width of 960 pixels. */
@@ -1891,58 +1906,61 @@ img#wpstats {
 	.preview-category {
 		padding: 3px 5px;
 	}
-	/* Content */
-	.page-children-preview {
-		width: 100%;
-		max-width: 590px;
-	}
-	.page-children-excerpt{
-		display: block;
-		max-width: 310px;
-		max-height: 200px;
-		padding: 0px 15px;
-		float:right;
-	}
-	.page-children-preview .small.button{
-		display: block;
-		float:right;
-		position:relative;
-		bottom: 20px;
-		left: 5px;
-	}
 
 	/* Sidebar */
-	.sidebar-left {
-		width: 80px;
-		height: 1px;
-		float: left;
-		margin-right: 20px;
-	}
+	.sidebar-right,
+	.sidebar-left,
 	.sidebar-empty {
-		width: 80px;
-		height: 200px;
-		height: 1px;
+		margin-bottom: 20px;
+		width: 140px;
 		float: right;
+	}
+	.sidebar-left {
 		margin-right: 20px;
+		float: left;
 	}
 	.sidebar-right {
-		width: 220px;
-		border: solid 5px #402F0F;
-		border-radius: 10px;
-		padding: 10px;
+		margin-left: 20px;
 		float: right;
-		margin-left: 30px;
 	}
-	.sidebar-right h2 {
-		font-size: 18px;
-		font-size: 1.285714286rem;
+	#menu-childpages {
+		list-style-type: disc;
+		list-style-position: inside;
+		padding: 10px;
+		border-radius: 10px;
+		background-color: #FFBC3E;
+		opacity: 0.8;       /* modern browser */  
+    	-moz-opacity: 0.8;  /* older Mozilla browser */  
+    	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE8 in Standard Compliant Mode */  
+    	filter:alpha(opacity=80); /* IE5.x -7.0 */  
+		word-wrap: break-word;
+
+	}
+	#menu-parentpage {
+		padding: 10px;
+		border-radius: 10px;
+		background-color: #FFBC3E;
+		opacity: 0.8;       /* modern browser */  
+    	-moz-opacity: 0.8;  /* older Mozilla browser */  
+    	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE8 in Standard Compliant Mode */  
+    	filter:alpha(opacity=80); /* IE5.x -7.0 */  
+	}
+	#menu-parentpage h2,
+	#menu-childpages h2 {
+		font-size: 14px;
+		font-size: 1rem;
 		padding-bottom: 6px;
+		color: #402F0F;
 	}
-	.sidebar-right li {
-		margin-left: 25px;
+	#menu-parentpage li,
+	#menu-childpages li {
+		padding: 5px 0px;
 	}
-	.sidebar-right li a {
+	#menu-parentpage h2 a,
+	#menu-childpages li a {
 		text-decoration: none;
+		color: #402F0F;
+		font-weight: bold;
 	}
 
 	/* Footer */

@@ -20,49 +20,49 @@ get_header(); ?>
 				<div id="openscience">
 					<h2 class="landingpage-header">Open Science</h2>
 					<div>
-					<?php echo get_post_meta($post->ID, 'about', single); ?>
-					<!--
-					Open Science <strong>öffnet Wissenschaft und ermöglicht allen die Teilhabe</strong> daran.
-	
-					Dabei ist Wissenschaft sehr weit gedacht und schliesst alle Disziplinen, wie auch Lehre, Projekte und Ressourcen mit ein.
-					-->
+						<?php echo get_post_meta($post->ID, 'about', single); ?>
+						<!--
+						Open Science <strong>öffnet Wissenschaft und ermöglicht allen die Teilhabe</strong> daran.
+		
+						Dabei ist Wissenschaft sehr weit gedacht und schliesst alle Disziplinen, wie auch Lehre, Projekte und Ressourcen mit ein.
+						-->
 					</div>
 				</div>
 				<div id="asap">
 					<h2 class="landingpage-header">AS A Practice</h2>
 					<div>
-					<?php echo get_post_meta($post->ID, 'ASAP', single); ?>
-					<!--
-					<strong>openscienceASAP.org</strong> ist eine Plattform um 
-					<ul>
-						<li>offene Wissenschaft zu betreiben,</li>
-						<li>sich eine offene Arbeitsweise anzueignen</li>
-						<li>und sich dazu auszutauschen</li>
-					</ul>
-					 ...the practical way!
-					 -->
+						<?php echo get_post_meta($post->ID, 'ASAP', single); ?>
+						<!--
+						<strong>openscienceASAP.org</strong> ist eine Plattform um 
+						<ul>
+							<li>offene Wissenschaft zu betreiben,</li>
+							<li>sich eine offene Arbeitsweise anzueignen</li>
+							<li>und sich dazu auszutauschen</li>
+						</ul>
+						 ...the practical way!
+						 -->
 					</div>
 				</div>
 				<div id="get-involved">
 					<h2 class="landingpage-header">Get Involved!</h2>
-					<?php echo get_post_meta($post->ID, 'get involved', single); ?>
-					<!--
 					<div>
-						Nutze die Plattform für dich:
-						<ul>
-							<li>Öffne deine Ideen und Werke aus Forschung, Lehrveranstaltungen und Projekten</li>
-							<li>Tools entwickeln</li>
-							<li>Bloggen</li>
-							<li>Wissen austauschen</li>
-						</ul>
+						<?php echo get_post_meta($post->ID, 'get_involved', single); ?>
+						<!--
+							Nutze die Plattform für dich:
+							<ul>
+								<li>Öffne deine Ideen und Werke aus Forschung, Lehrveranstaltungen und Projekten</li>
+								<li>Tools entwickeln</li>
+								<li>Bloggen</li>
+								<li>Wissen austauschen</li>
+							</ul>
+						-->
 					</div>
-					-->
 				</div>
 			</div>
 			<h2 class="button stream"><a href="http://openscienceasap.org/stream" title="Stream openscienceASAP">Stream</a></h2>
 			<div id="stream">
 				<?php $i = 1;
-				$queryStream = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'orderby' => 'date') );
+				$queryStream = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'meta_key' => 'featured', 'meta_value' => 'yes', 'orderby' => 'date') );
 				while ( $queryStream->have_posts() ) : $queryStream->the_post(); { ?>
 					<div id="post-preview-<?php echo $i; ?>" class="post-preview-box">
 						<h3 class="preview-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>

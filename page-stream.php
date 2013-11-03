@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: Stream
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -15,8 +15,6 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
-		<div class="sidebar-left"></div>
-		<?php get_sidebar(); ?>
 		<div id="content" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', 'page' ); ?>
