@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', get_post_format() ); ?>test single
+				<?php get_template_part( 'content', get_post_format() ); ?>
 				<?php if ( function_exists('socialshareprivacy') ) { socialshareprivacy(); } ?>
 				<?php the_flattr_permalink(); ?>
 				<nav class="nav-single">

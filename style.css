@@ -2140,12 +2140,12 @@ img#wpstats {
  
 .yellow-button,
 .yellow-button:visited,
-#mc_embed_signup input[type="submit"] {
+.mc_embed_signup input[type="submit"] {
 	background-color: #FFBC3E;
 	background-image: none;
 	border: 1px solid #000000;
 }
-#mc_embed_signup input[type="submit"] {
+.mc_embed_signup input[type="submit"] {
 	margin-top: 5px;
 }
 

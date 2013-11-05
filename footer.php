@@ -18,10 +18,10 @@
 		<div id="newsletter">
 			<h2>Newsletter</h2>
 			<!-- Begin MailChimp Signup Form -->
-			<div id="mc_embed_signup">
-				<form action="http://openscienceasap.us7.list-manage.com/subscribe/post?u=c71e7c601f8a8d7ea9f40da78&amp;id=6effef7ddf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Adresse" required>
-					<div class="clear"><input type="submit" value="Anmelden" name="subscribe" id="mc-embedded-subscribe" class="yellow-button"></div>
+			<div id="footer-newsletter-form" class="mc_embed_signup">
+				<form action="http://openscienceasap.us7.list-manage.com/subscribe/post?u=c71e7c601f8a8d7ea9f40da78&amp;id=6effef7ddf" method="post" name="mc-embedded-subscribe-form" class="mc-embedded-subscribe-form validate" target="_blank" novalidate>
+					<input type="email" value="" name="EMAIL" class="email" id="footer-mce-EMAIL" placeholder="Email Adresse" required>
+					<div class="clear"><input type="submit" value="Anmelden" name="subscribe" id="footer-mc-embedded-subscribe" class="yellow-button"></div>
 				</form>
 			</div>
 			<!--End mc_embed_signup-->
