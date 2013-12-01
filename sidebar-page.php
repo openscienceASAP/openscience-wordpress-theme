@@ -38,12 +38,13 @@ if($children) { ?>
 } else { ?>
 	<div class="sidebar-empty">
 <?php } ?>
-	<div id="menu-stream">
 	<?php 
-		$catID = get_post_meta($post->ID, 'page_category', single); 
-		$catURL = get_category_link( $catID );
-	?>
-		<h2><a href="<?php echo $catURL; ?>" title="Articles">Articles</a> <a href="<?php echo $catURL; ?>feed" title="RSS Feed" class="icon-rss"></a></h2>
-	</div>
+	$catID = get_post_meta($post->ID, 'page_category', single); 
+	$catURL = get_category_link( $catID );
+	if($catID) { ?>
+		<div id="menu-stream">
+			<h2><a href="<?php echo $catURL; ?>" title="Articles">Articles</a> <a href="<?php echo $catURL; ?>feed" title="RSS Feed" class="icon-rss"></a></h2>
+		</div>
+	<?php } ?>
 </div>
 
