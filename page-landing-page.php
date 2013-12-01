@@ -62,7 +62,7 @@ get_header(); ?>
 			<h2 class="button stream"><a href="http://openscienceasap.org/stream" title="Stream openscienceASAP">Stream</a></h2>
 			<div id="stream">
 				<?php $i = 1;
-				$queryStream = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'meta_key' => 'featured', 'meta_value' => 'yes', 'orderby' => 'date') );
+				$queryStream = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'meta_key' => 'show_landingpage', 'meta_value' => 'yes', 'orderby' => 'date') );
 				while ( $queryStream->have_posts() ) : $queryStream->the_post(); { ?>
 					<div id="post-preview-<?php echo $i; ?>" class="post-preview-box">
 						<h3 class="preview-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>

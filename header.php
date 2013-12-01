@@ -61,7 +61,7 @@
 		<div id="header-image">
 			<?php $header_image = get_header_image();
 			if ( ! empty( $header_image ) ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="http://openscienceasap.org/wp-content/uploads/2013/10/header-21.jpg" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 			<?php endif; ?>
 		</div>	
 	</header><!-- #masthead -->

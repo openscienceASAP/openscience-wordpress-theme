@@ -10,9 +10,6 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
-			<?php the_post_thumbnail(); ?>
-			<?php endif; ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
 
@@ -39,7 +36,7 @@
 	           				</div>
 	           			</div>
 	           			<div class="page-children-icons">
-		       				<span class="small button more"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">view more</a></span>
+		       				<div class="small button more"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">view more</a></div>
 		       			</div>
 					</div>
 				<?php } ?>

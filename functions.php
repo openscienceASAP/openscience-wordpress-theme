@@ -501,7 +501,6 @@ function load_jquery() {
  * @since openscienceASAP 0.1
  */
 
-
 // Add new image sizes
 function custom_images_insert_menu ( $image_sizes ) {
   global $_wp_additional_image_sizes;

@@ -1,0 +1,611 @@
+
+- open science plattform nutzerin kontaktieren
+- openscienceASAP in Crowdsourcing Ideen Plattform von Reinhard Willfort rein geben
+- dokumentation von bombenopfern auf openscienceasap machen + crowdsourcing
+
+# Final
+https://kuler.adobe.com/create/color-wheel/?base=2&rule=Shades&selected=2&name=My%20Kuler%20Theme&mode=rgb&rgbvalues=0.75,0.5529411764707226,0.1823529411764706,0.5,0.3686274509804818,0.1215686274509804,1,0.7372549019607844,0.24313725490196078,0.25,0.1843137254902409,0.0607843137254902,0.9,0.6635294117648672,0.21882352941176472&swatchOrder=1,0,3,2,4
+Gelb FFBC3E
+Dunkel Gelb 402F0F
+Blau 3E91FF
+Blau dunkel 0852B2
+Grau E5E5E5
+
+image sizes
+header image: 960 x 250
+post thumb: 298 x 240
+page thumb: 250 x 200
+
+* TODO
+** IDEAS
+- http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0050491
+- http://schoolofdata.org/blog/
+- http://qz.com/
+- http://opendataportal.at/
+- http://crowdcrafting.org/
+
+** QUALITY CONTROL
+- controlling page and content:
+- theme testing https://codex.wordpress.org/Theme_Development#Theme_Testing_Process https://codex.wordpress.org/Theme_Unit_Test
+** AFTER RELEASE
+- Schutz der Privatssphäre in Wordpress miteinbinden
+- URLs nicht verändern nach dem veröffentlichen
+- für bildung (workshops und kurse) braucht es einen gesicherten übungsbereich => darin sollte nicht jede veröffentlichung gleich im stream darstellt werden.
+- wenn man auf seite ist findet man auf die parent page nicht retour
+- plugins uploaden: wp-secure, etc
+- post formats für videos, tweets, usw. machen
+- suchmaschinen mitteilen, dass page umgezogen ist
+- featured auswahl geht nur, wenn featured image gesetzt wurde!
+- open educational resources page erstellen
+- easy add of html (newsletter) box in the sidebar of pages, e.g. open science @ uni graz
+- images als list properties erstellen
+- Netwzwerk-Grafik machen: offene Dateiformate, Open Source, Open Data, Open Access, Open Methodology, Open Hardware, Open Peer Review, Versionierung, Veröffentlichung, Kommunikation, Reproduktion, Nachvollziehbarkeit, Recht, Technologie, Kultur
+- Wordle mit Open Science Begriffen machen => vielleicht aus Text raus erstellen
+- build script für master branch
+- add buttons in about section
+- projects folder und subdomain anlegen
+- logo finalisieren: dunkel gelb probieren, ausrichtung text kontrollieren, exports in unterschiedliche größen, add "Open Science as a practice" line
+- bi-lingualität => später
+- erstellen von template parts: footer section eines artikels zusammenfassen (flattr, socialshare, printfriendly etc.)
+- create automatically test users after installation
+- stream button bei hover verändern
+- add information, that newsletter are german
+- list styling anpassen
+- page für sum up erstellen
+- filter möglichkeiten auch auf pages machen: copyright, region, data/access/etc
+- Quellverweis header image adden
+- robots.txt überlegen
+- add printfriendly to pages
+- impressum anpassen: copyright
+- screenshot
+- implement content of listings into pretty formated boxes http://okfn.org/get-involved/
+- copy ip pages
+- https://codex.wordpress.org/WordPress_Site_Reviews
+- update documentation: style.css. github, .org file, used plugins
+- adapt github-embed plugin
+- deactivate google javascript (maybe ribbon plugin)
+- pages: rss collection, social media, 
+- adapt theme of enlighter plugin
+- import subscribers and send newsletter out
+- add bilingual function and translating pages
+- default header image and thumb for every category
+- sidebar scrolling
+- pages navigation sidebars in up und down auf frontend ändern statt größer/kleiner zeichen
+- draw flow diagram of content/pages/etc 
+- solve image upload autocrop problem from chris
+- add content
+- import past-time events into new website
+- add metrics for content: altmetrices, shares, etc
+- links updaten: slideshare, twitter, projekte, okfn.at, opendatagraz.at, github
+- links auf google zu open science projekt suchen und auf neue urls hinweisen
+- verlinken: okfn.at, opendatagraz.at, alpine-geckos, etc.
+** REVIEW
+- Fuchsy
+- Peter
+- Marc
+- Oliver
+- Mike
+- Jürgen Brüder
+- David
+- Manu
+
+** MIGRIEREGEN
+htaccess schreiben
+blog artikel verfassen
+artikel und pages checken
+
+* REQUIREMENTS
+** AUDIENCE
+- Scientists
+- Citizens
+- Students
+- Alumnis
+- Communities: Open Data, Open Access, Open Science, Open Source,
+all ages
+international, biggest part german
+** CONTENT
+Organize Content as fluid streams: individualy created, time sensitive
+*** TAXONOMIES
+
+# Sections
+- Education: Courses, OER
+- Projects & Resources: Projects, Software, Content, Posts
+- Science: Papers, Posts
+- Community (Team is part of the community): Events, Posts, 
+
+# Area (for Open Data)
+Collection Page of chosen Tags, like Open Government Data Graz
+- Open Data Tree
+- Open Source Software
+- Copyrights
+- Data Formats
+*** EVENTS
+**** Overview
+- Event Type
+- Location/Area
+- Date/Duration
+- organized by us or not
+- topic(s)
+**** Posts
+- normal article templates for our events
+- small preview frames for other events
+*** AUTHOR
+# Content
+- Slideshare
+- GitHub
+- Email
+- Twitter
+- LinkedIn
+- Figshare
+- Coursera
+- Institute / University
+- Website
+- Etherpad: Ideen zu wiss. Arbeiten eintragen
+*** HACKS/INCUBATOR
+a place where hackers meet and can contribute their ideas
+- links to other hacktivities: StadtLandCode,
+*** TUTORIALS
+own content type?
+** FUNCTIONS
+Search Enginge Optimized
+automatize as many steps as possible, reduce human tasks
+easy referencing
+- secure privacy concerns of automatic connection to social networks on laoding the page http://www.heise.de/extras/socialshareprivacy/
+- Feedback: bugs, critics, thanks etc.
+- LaTeX Support
+- 1 click installation
+- customizeable content structure: everyone should be able to use just the content types needed
+*** MULTI LINGUAL
+- bi lingual pages
+*** Event Calendar
+- RSS Feed
+- iCal
+*** RSS FEEDS
+selecting of different content types
+*** Stats
+Website, RSS Feeds, external pages
+*** EMBED MEDIA
+- tables
+- videos
+- podcasts
+- images
+- sourcecode /w syntaxhighlighting
+*** EXPORT / SAVE AS
+- Docs: ODT, PDF, TXT, EPUB, LaTeX
+- Spreadsheets: ODS, CSV
+- Images: SVG, PNG, JPEG
+- API
+*** SUBSCRIPTION
+- RSS Feed
+- iCal
+- GitHub
+- Figshare
+- Twitter Account
+- Newsletter
+*** SOCIAL MEDIA TOOLS
+# GitHub
+
+# Twitter
+- last tweets via hashtag
+- last tweets of actual page url
+*** SHORTCODES
+- [contact]: direct link to contact page
+- [about us]: direct link to about us page
+*** API
+- figshare
+- content
+- mendeley
+- twitter
+- plosone
+- altmetric.com
+** STREAM
+** EDUCATION
+*** Overview
+# Content
+- Description
+- wiki page
+- Openness
+- Educational Ressources
+- Sources: RSS, Coursepage, 
+- all Articles (last 5 and more...)
+- Sourcecode
+- Video
+- Info Box: Institute/University (w platform), Date (w Duration), Teacher, Copyright (w. default notion!)
+- eventual Projects
+- RSS Feed
+- Social Media Tools
+- educational ressources for the course (via link to article or own section? => tend to link)
+- header image
+- stats
+- license: data, sourcecode, publication
+
+*** Article
+- link to course
+
+** SCIENCE
+*** Overview
+# Content
+- title
+- wiki page
+- description
+- name scientists
+- contact scientists
+- organisation of scientists
+- planned time intervall
+- possibilities of participation
+- copyright (default)
+- Categories: Bachelor Thesis, ? Seminar ?, Master Thesis, PhD, Case Study
+- Keywords: used software, data and license
+- Openness keywods: data, software, methods
+- link: rawdata, sourcecode, mentions, other publications, etc.
+- collect tweets of the link
+- metrics section: download them as raw data
+  - Readers: rating
+  - citations: scopus, crossref, google scholar
+  - Social Networks: Twitter, Mendeley, Facebook, CiteUlike, 
+  - blogs & media coverage
+  ?? seperate comments, related content and metrics from content section ??
+- license: data, sourcecode, publication
+- etherpad
+- Glossar optional
+
+# functions
+- Twitter Feed zu Link und Hashtag
+- Rating
+- RSS Feed Artikel und Kommentare
+- related articles
+- list all papers
+- progress bar?? 
+- actual status: published, work in progress, abgebrochen, research -> show details to what the status means on mouse over
+- ?? comments  ??
+- show views
+- easy navigation
+- download media embeded
+- easy sharing function
+
+# Layout & Design
+- Header Image
+- clearly structure
+- ?? select color ??
+*** Paper
+own Custom Post Type
+# content
+- title 
+- versioning
+- subtitel (optional)
+- Abstract
+- Keywords
+- Openess Keywords: Software, Copyright, Data Formats, Data Source
+- Content
+- Acknowledgement
+- Conclusion
+- Name scientists
+- contact scientists
+- Organisation
+- Data Source
+- personal position to the research question and field
+- financing
+- Feedback
+- Copyright
+- Paper Type: Short-Paper, Review, Comment,
+- Open Science Rating: crowd, reviewers
+- Glossar optional
+- show/hide figures => at the top of the article, cause its one of the most important contents of a paper, next to the abstract => see plosone paper
+
+# functions
+- auotmatic Reference Box
+- RSS Feed Article and comments
+- Rating
+- comments
+- publish it also without scientific overview page or scientific project
+- show views
+- stats: shares on social web, visits on page, backlinks, comments
+
+# layout 
+big content column and sidebar on the left
+*** Review
+# functions
+- show views
+*** Comment
+
+# functions
+- show views
+*** Research Diary
+# Content
+- Name
+- versioning
+- licenses
+- Openess Keywords: Software, Copyright, Data Formats, Data Source
+
+# Funktionen
+- Rating
+- tags: literature research, data research, writing, starting, experimentation, data collection, data analyses, etc.
+
+# functions
+- show views
+*** Article
+** PROJECT & RESOURCES
+mulptile users
+language
+attach projects to course or science
+- stats
+*** Overview
+- license: data, sourcecode, publication
+- wiki page
+- Project Partner: OKFN, etc,
+*** Project Diary
+*** Article
+** COMMUNITY
+*** Article
+*** Events
+*** Team
+** DESIGN & LAYOUT
+- reduced, not overloaded
+- own graphics/icons
+- work visually
+- comprimize content
+- smaller
+- homogenious
+*** LANDING PAGE
+- reduced, clean, easy to navigate
+- user/visitor focused
+- clearly structured
+*** COLORS
+angenehme, dezente, ruhige Farben
+*** TYPO
+bigger font
+small headlines
+*** CONTENT MANAGEMENT
+display content differently: blog, science, course, project
+- Open Data, Open Knowledge & Open Content Buttons 
+
+*** LAYOUT
+better lists
+rounded style
+*** IMAGES
+*** MENU
+*** RESPONSIVE DESIGN
+- Posts, Events & Pages
+- Papers
+** NAVIGATION / MENU
+- navigate by function: page where you can find content by different navigation concepts: our structur, by topics, by use case of content, by specific content (software, data store, etc.)
+- give the user some content on every to page, he maybe is interested of to click on and go further into the page => every single post, page for clickable options => footer bar with??
+*** LANDING PAGE
+get meta pages like search and navigate by topic, tag etc from there and also the specific content
+*** MENU
+*** FOOTER
+*** SIDEBAR
+* IMPLEMENTATION
+** 0.1 - beta release
+
+** 0.x - PLUGINS
+Structur the content of the Courses Section
+- SEO
+- Anti Spam
+- Security
+- easy use of youtube, flickr, twitter,
+- player for video, audio, 
+- export odt, epub, 
+- stackoverflow einbinden
+*** tasks
+# Newsletter
+- use mailchimp for this
+- monthly newsletter
+# RSS
+- embed a link element to the rss feed in the header, so search engines can find the rss link automatically
+- <a href="http://www.w3schools.com/rss/myfirstrss.xml"> and <img src="http://www.w3schools.com/rss/rss.gif" width="36" height="14"> buttons for rss feeds
+# GitHub
+- repo.js http://darcyclarke.me/dev/repojs/
+- http://ghbtns.com/
+# Latex
+- http://www.mathjax.org/
+# Socialshareprivacy
+- http://www.heise.de/extras/socialshareprivacy/#merge
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+- GitHub <iframe src="http://syga.kjirou.net/w/i.html?u=skasberger&w=180&h=240" width="180" height="240" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+- Syntax Highlighting
+- Export PDF
+- Social Share Heise: <?php if ( function_exists('socialshareprivacy') ) { socialshareprivacy(); } ?>
+- Flattr <?php the_flattr_permalink() ?>
+** 0.x - EDUCATION
+overview page: preview of all courses (no thumbs) and OER materials
+- page template: overview
+- page template: courses
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - SCIENCE
+Structur the content of the Courses Section
+- post type: scientific diary
+- post type: paper
+- page template: overview
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - PROJECTS & RESOURCES
+Structur the content of the Courses Section
+
+- post type: tutorial
+- page template: overview
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - ARTICLES
+Structur the content of the Courses Section
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - DESIGN
+Color scheme: 4 colors, 
+develop CI: manual for dos and donts for the own brand
+typos
+responsive
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - LANDING PAGE
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - PAGES
+- RSS Collections
+- Authors
+- Courses
+- Research
+- Social
+- Projects & Resources
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - SHORTCODES
+
+*** tasks
+*** Requirements
+- embed licenses
+- add github: follow me, star me, fork me
+- export
+- link to article (by id or slug)
+- actual date (en+de)
+- actual time (en+de)
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - API's
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - USERS
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - SOCIAL MEDIA
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - FUTURE
+- gimmick: gif with retro style as header image
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - 
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - 
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - 
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+** 0.x - 
+
+*** tasks
+*** Requirements
+*** SUMMARY
+*** DOCUMENTATION
+
+* DEPLOYMENT
+* ISSUES
+- ORCID ID support: https://github.com/skasberger/openscience-wordpress-theme/issues/1
+* COMMUNICATION
+- Guy from brasil
+- Royal Society of Chemistry
+- ORCID Guy
+- Daniel from Bozen
+
+Communication Policy
+Posts: on
+Pages: off, cause the content changes over time and the comments may do not fit to the actual content
+* DOCUMENTATION
+# PLUGINS
+- Syntax Highlighter Compress http://www.phodana.de/wordpress/wp-plugin-syntax-highlighter-compress/
+- Mathjax Latex 
+- Template Tag Shortcodes http://justintadlock.com/archives/2009/03/24/template-tag-shortcodes-wordpress-plugin
+
+- warum hat man was wohin gemacht dokumentieren!
+
+- social share functions at the end of a post, cause this is what is useful after finishing the reading. same with reply
+- Manual: kurze Titel für Pages wählen
+# CONFIGURATION
+## Capability Manager Enhanced
+Contributors:
+- upload_files => ja
+- edit_published_posts => ja
+- edit_pages => ja (ausprobieren)
+
+IP Neodym Teacher:
+- upload_files => ja
+- edit_published_posts => ja
+- edit_pages => ja (ausprobieren)
+=> Für IP Pages Editor Rechte geben
+
+
+# SetUp Roles
+Plugins:
+- User Role Editor: keine Änderungen des Setups notwendig
+
+## Contributor
+Soll review unterlaufen bevor etwas veröffentlicht wird.
+Pages editieren vor und nach veröffentlichen wenn zugewiesen.
+Unterschied zu default:
+- upload_files => ja
+- edit_published_posts => ja
+- edit_pages => ja (ausprobieren)
+
+## Author
+Unterschied zu default:
+
+## Editor
+Unterschied zu default:
+
+
+## Teacher
+Editor für bestimmte Seiten und Posts, ansonsten contributor
+- manage_categories => nein
+
+
+## Students
+Contributor
+
+* CI
+Statt Logo eine Typo entwickeln lassen fürs Web und diese dann verwenden?
